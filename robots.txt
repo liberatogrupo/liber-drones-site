@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://liber-drones-site.pages.dev/sitemap.xml
