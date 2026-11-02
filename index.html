@@ -22,934 +22,565 @@
 <meta name="twitter:description" content="Tecnologia aérea para o agronegócio. Pulverização, dispersão e mapeamento em PA, TO e MA.">
 <meta name="twitter:image" content="https://drones.libersolutions.com.br/liber-drones-logo-original-cortada.png">
 <link rel="icon" type="image/png" href="/liber-drones-logo-original-cortada.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LIBER DRONES","url":"https://drones.libersolutions.com.br/","logo":"https://drones.libersolutions.com.br/liber-drones-logo-original-cortada.png","description":"Serviços agrícolas com drones: pulverização, dispersão de sólidos e mapeamento. Atuação no Pará, Tocantins e Maranhão.","taxID":"49.176.315/0001-83","contactPoint":{"@type":"ContactPoint","telephone":"+55-98-98148-0329","contactType":"sales","availableLanguage":"Portuguese"},"areaServed":[{"@type":"AdministrativeArea","name":"Pará"},{"@type":"AdministrativeArea","name":"Tocantins"},{"@type":"AdministrativeArea","name":"Maranhão"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Serviços com drones agrícolas","itemListElement":[{"@type":"OfferCatalog","name":"Pulverização agrícola com drones"},{"@type":"OfferCatalog","name":"Dispersão de sólidos e sementes"},{"@type":"OfferCatalog","name":"Mapeamento agrícola"}]}}</script>
-<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');setTimeout(function(){document.documentElement.classList.add('loaded')},3200)</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LIBER DRONES","url":"https://drones.libersolutions.com.br/","logo":"https://drones.libersolutions.com.br/liber-drones-logo-original-cortada.png","description":"Serviços agrícolas com drones: pulverização, dispersão de sólidos e mapeamento. Atuação no Pará, Tocantins e Maranhão.","taxID":"49.176.315/0001-83","contactPoint":{"@type":"ContactPoint","telephone":"+55-98-98148-0329","contactType":"sales","availableLanguage":"Portuguese"},"areaServed":[{"@type":"AdministrativeArea","name":"Pará"},{"@type":"AdministrativeArea","name":"Tocantins"},{"@type":"AdministrativeArea","name":"Maranhão"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Serviços com drones agrícolas","itemListElement":[{"@type":"OfferCatalog","name":"Pulverização agrícola com drones"},{"@type":"OfferCatalog","name":"Dispersão de sólidos e sementes"},{"@type":"OfferCatalog","name":"Georreferenciamento e mapeamento agrícola"}]}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=85">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" media="print" onload="this.media='all'" integrity="sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V" crossorigin="anonymous">
+<link rel="preload" as="image" href="/assets/dji-2400.webp" imagesrcset="/assets/dji-800.webp 800w, /assets/dji-1400.webp 1400w, /assets/dji-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#060807;--bg-2:#0a0f0b;--bg-3:#101711;
-  --ink:#eef2ea;--muted:#97a597;--dim:#5f6d60;
-  --lime:#85c440;--lime-hi:#a9d96c;--lime-deep:#4e7f22;
-  --paper:#ecefe6;--paper-ink:#0d140e;
-  --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.16);
-  --radius:26px;--ease:cubic-bezier(.22,1,.36,1);
-  --display:'Inter Tight',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;
-  --gutter:clamp(18px,4vw,56px);
+  --white:#fff;
+  --soft:#f4f6f2;
+  --ink:#0f1a12;
+  --text:#3f4a42;
+  --muted:#6c776e;
+  --line:#e2e7df;
+  --green:#85c440;
+  --green-600:#4f8f2a;
+  --green-700:#3a6e1d;
+  --forest:#0e1f12;
+  --radius:16px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --head:'Inter Tight',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --gutter:clamp(20px,4vw,48px);
+  --shadow:0 1px 2px rgba(15,26,18,.04),0 12px 32px -12px rgba(15,26,18,.12);
 }
 *,*:before,*:after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:var(--lime);color:#0b1206}
+body{margin:0;background:var(--white);color:var(--text);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
+img{display:block;max-width:100%}
 button,input,select,textarea{font:inherit;color:inherit}
-.wrap{width:min(1440px,100% - var(--gutter)*2);margin-inline:auto}
-.skip{position:absolute;left:-999px;top:12px;z-index:200;background:var(--lime);color:#0b1206;padding:10px 16px;border-radius:99px;font-weight:700}
-.skip:focus{left:12px}
-:focus-visible{outline:2px solid var(--lime-hi);outline-offset:3px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);font-weight:600;letter-spacing:-.025em;margin:0}
+p{margin:0}
+.wrap{width:min(1240px,100% - var(--gutter)*2);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:10px;z-index:200;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px}
+.skip:focus{left:10px}
+:focus-visible{outline:2px solid var(--green-600);outline-offset:3px}
 
-/* grain overlay */
-.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
-@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+/* type */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--green-700)}
+.eyebrow:before{content:"";width:18px;height:2px;background:var(--green)}
+.h2{font-size:clamp(34px,4.2vw,56px);line-height:1.06;margin-top:18px;text-wrap:balance}
+.lead{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--text)}
+.section{padding:clamp(88px,10vw,140px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:clamp(44px,5vw,72px)}
+.sec-head .lead{max-width:500px;justify-self:end}
 
-/* ---------- loader ---------- */
-.loader{display:none}
-.js .loader{display:grid;place-items:center;position:fixed;inset:0;z-index:150;background:var(--bg);transition:clip-path 1.1s var(--ease),visibility 0s 1.2s;clip-path:inset(0 0 0 0)}
-.js.loaded .loader{clip-path:inset(0 0 100% 0);visibility:hidden}
-.js.reduced .loader{display:none}
-.loader-inner{width:min(420px,72vw);display:grid;gap:22px;justify-items:center}
-.loader-logo{width:100%;opacity:0;transform:translateY(14px);animation:loaderIn .9s var(--ease) .1s forwards}
-.loader-bar{width:100%;height:1px;background:var(--line-2);overflow:hidden}
-.loader-bar i{display:block;height:100%;background:var(--lime);transform-origin:left;transform:scaleX(0);animation:loaderBar 1.4s var(--ease) .2s forwards}
-.loader-meta{display:flex;justify-content:space-between;width:100%;font:500 10px/1 var(--mono);letter-spacing:.2em;color:var(--muted)}
-@keyframes loaderIn{to{opacity:1;transform:none}}
-@keyframes loaderBar{to{transform:scaleX(1)}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;border:1px solid transparent;font:600 15px/1 var(--body);cursor:pointer;transition:background .3s,color .3s,border-color .3s,box-shadow .3s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--green);color:#0d1a0a}
+.btn-primary:hover{background:#97d152;box-shadow:0 10px 24px -10px rgba(133,196,64,.7)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#22382a}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--green-700)}
+.link svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.link:hover svg{transform:translateX(4px)}
 
-/* ---------- cursor ---------- */
-.cursor{position:fixed;left:0;top:0;z-index:120;pointer-events:none;width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid rgba(182,240,122,.55);border-radius:50%;opacity:0;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,opacity .3s,border-color .3s}
-.cursor.on{opacity:1}
-.cursor.hover{width:74px;height:74px;margin:-37px 0 0 -37px;background:rgba(133,196,64,.12);border-color:rgba(182,240,122,.25)}
-.cursor-dot{position:fixed;left:0;top:0;z-index:121;pointer-events:none;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;background:var(--lime-hi);opacity:0}
-.cursor-dot.on{opacity:1}
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.hdr .bar{height:80px;display:flex;align-items:center;gap:32px}
+.logo{display:block;width:clamp(170px,15vw,210px);flex:none;position:relative}
+.logo img{width:100%;height:auto;transition:opacity .4s}
+.logo .dark{position:absolute;inset:0;opacity:0}
+.nav{display:flex;gap:30px;margin-left:auto;font-size:15px;font-weight:500;color:rgba(255,255,255,.88)}
+.nav a{position:relative;padding:6px 0;transition:color .3s}
+.nav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a:hover:after,.nav a.active:after{transform:scaleX(1)}
+.hdr .btn{height:44px;padding:0 20px;font-size:14px}
+.hdr.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr.solid .nav{color:var(--ink)}
+.hdr.solid .logo .light{opacity:0}
+.hdr.solid .logo .dark{opacity:1}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:1.6px;background:#fff;transition:transform .35s var(--ease),top .35s var(--ease),background .3s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:25px}
+.hdr.solid .burger{border-color:var(--line)}
+.hdr.solid .burger span{background:var(--ink)}
+.menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:72px 0 auto;z-index:49;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(15,26,18,.25);padding:12px var(--gutter) 28px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .35s,transform .45s var(--ease),visibility 0s .45s}
+.menu-open .mnav{opacity:1;transform:none;visibility:visible;transition:opacity .35s,transform .45s var(--ease)}
+.mnav a{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font:600 18px/1.2 var(--head);color:var(--ink)}
+.mnav a.btn{margin-top:20px;width:100%;justify-content:center;border-bottom:0;font:600 15px/1 var(--body);color:#0d1a0a}
 
-/* ---------- progress ---------- */
-.progress{position:fixed;left:0;top:0;height:2px;width:100%;z-index:110;background:linear-gradient(90deg,var(--lime-deep),var(--lime-hi));transform-origin:left;transform:scaleX(0)}
+/* hero */
+.hero{position:relative;min-height:max(680px,100svh);display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;isolation:isolate;background:var(--forest)}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media img{width:100%;height:115%;object-fit:cover;object-position:60% 45%;will-change:transform}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,17,10,.86) 0%,rgba(8,17,10,.62) 42%,rgba(8,17,10,.12) 75%),linear-gradient(180deg,rgba(8,17,10,.55) 0%,transparent 26%,transparent 62%,rgba(8,17,10,.75) 100%)}
+.hero-content{padding:150px 0 64px}
+.hero .eyebrow{color:#b9e08a}
+.hero h1{color:#fff;font-size:clamp(46px,6.6vw,96px);line-height:1;letter-spacing:-.035em;max-width:900px;margin-top:22px}
+.hero h1 span{color:var(--green)}
+.hero .lead{color:rgba(255,255,255,.82);max-width:560px;margin-top:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.facts{border-top:1px solid rgba(255,255,255,.18);display:grid;grid-template-columns:repeat(3,1fr)}
+.fact{padding:28px 0 34px;display:flex;align-items:baseline;gap:14px}
+.fact+.fact{padding-left:32px;border-left:1px solid rgba(255,255,255,.14)}
+.fact strong{font:600 clamp(26px,2.4vw,34px)/1 var(--head);letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;line-height:1.4;color:rgba(255,255,255,.7)}
 
-/* ---------- header ---------- */
-.site-header{position:fixed;inset:0 0 auto;z-index:100;padding:18px 0;transition:transform .6s var(--ease),padding .4s var(--ease)}
-.site-header.hide{transform:translateY(-110%)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;border-radius:99px;border:1px solid transparent;transition:background .5s,border-color .5s,backdrop-filter .5s}
-.site-header.scrolled{padding:12px 0}
-.site-header.scrolled .nav{background:rgba(10,15,11,.86);border-color:var(--line);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4)}
-.logo{display:block;width:clamp(170px,17vw,240px);flex:none}
-.logo img{width:100%;height:auto}
-.menu{display:flex;gap:6px;align-items:center}
-.menu a{position:relative;padding:10px 16px;font-size:13px;font-weight:500;color:#cfd8cd;border-radius:99px;transition:color .3s,background .3s}
-.menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.menu a.active{color:var(--lime-hi)}
-.header-cta{display:inline-flex;align-items:center;gap:12px;padding:6px 6px 6px 20px;border-radius:99px;background:var(--ink);color:#0b1206;font-size:13px;font-weight:600;transition:background .3s}
-.header-cta:hover{background:var(--lime-hi)}
-.header-cta .ic{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#0b1206;color:var(--lime-hi);transition:transform .45s var(--ease)}
-.header-cta:hover .ic{transform:rotate(45deg)}
-.ic svg{width:15px;height:15px}
-.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:rgba(10,15,11,.6);backdrop-filter:blur(10px);cursor:pointer;position:relative}
-.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:#fff;transition:transform .45s var(--ease),top .45s var(--ease)}
-.burger span:nth-child(1){top:19px}.burger span:nth-child(2){top:26px}
-.menu-open .burger span:nth-child(1){top:22px;transform:rotate(45deg)}
-.menu-open .burger span:nth-child(2){top:22px;transform:rotate(-45deg)}
-.mobile-menu{position:fixed;inset:0;z-index:95;background:rgba(6,8,7,.97);backdrop-filter:blur(14px);display:flex;flex-direction:column;justify-content:flex-end;padding:120px var(--gutter) 48px;clip-path:circle(0% at calc(100% - 44px) 44px);transition:clip-path .8s var(--ease);visibility:hidden}
-.menu-open .mobile-menu{clip-path:circle(150% at calc(100% - 44px) 44px);visibility:visible}
-.mobile-menu a.big{display:block;font-size:clamp(40px,12vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1.1;padding:6px 0;border-bottom:1px solid var(--line);opacity:0;transform:translateY(30px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.mobile-menu a.big em{font-family:var(--serif);font-weight:400;color:var(--lime);font-size:.5em;vertical-align:super;margin-right:10px;letter-spacing:0}
-.menu-open .mobile-menu a.big{opacity:1;transform:none}
-.menu-open .mobile-menu a.big:nth-child(2){transition-delay:.06s}.menu-open .mobile-menu a.big:nth-child(3){transition-delay:.12s}.menu-open .mobile-menu a.big:nth-child(4){transition-delay:.18s}.menu-open .mobile-menu a.big:nth-child(5){transition-delay:.24s}.menu-open .mobile-menu a.big:nth-child(6){transition-delay:.3s}
-.mobile-menu .mm-foot{margin-top:36px;display:flex;justify-content:space-between;font:500 11px/1.6 var(--mono);letter-spacing:.12em;color:var(--muted)}
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.about-grid .lead{margin-top:6px}
+.checks{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line);font-weight:500;color:var(--ink);line-height:1.45}
+.checks svg{flex:none;width:20px;height:20px;margin-top:1px;color:var(--green-600)}
 
-/* ---------- shared type ---------- */
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
-.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(133,196,64,.15),0 0 18px var(--lime);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(133,196,64,.05),0 0 8px var(--lime)}}
-.h2{font-size:clamp(42px,6.4vw,104px);line-height:.95;letter-spacing:-.045em;font-weight:600;margin:22px 0 0;text-wrap:balance}
-.h2 em,.h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.02em;color:var(--lime-hi)}
-.line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
-.line>span{display:inline-block;will-change:transform}
-.lede{font-size:clamp(16px,1.25vw,19px);line-height:1.75;color:#b9c4b8;max-width:520px}
-.section{padding:clamp(96px,13vw,190px) 0;position:relative}
-.sec-head{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:end;margin-bottom:clamp(48px,6vw,90px)}
-.sec-head .lede{justify-self:end}
-.idx{font:500 11px/1 var(--mono);letter-spacing:.18em;color:var(--dim)}
+/* services */
+.services{background:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .5s var(--ease),translate .5s var(--ease)}
+.card:hover{translate:0 -6px;box-shadow:0 1px 2px rgba(15,26,18,.04),0 28px 50px -20px rgba(15,26,18,.22)}
+.card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe5da}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s var(--ease)}
+.card:hover .card-media img{scale:1.05}
+.card-num{position:absolute;left:18px;top:18px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.92);font:600 12px/1 var(--body);letter-spacing:.08em;color:var(--ink)}
+.card-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:24px;line-height:1.2}
+.card dl{margin:18px 0 26px;display:grid;gap:14px}
+.card dt{font:600 11px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card dt.sol{color:var(--green-700)}
+.card dd{margin:0;font-size:15px;line-height:1.6}
+.card .link{margin-top:auto}
 
-/* ---------- buttons ---------- */
-.btn{position:relative;display:inline-flex;align-items:center;gap:14px;height:62px;padding:0 8px 0 28px;border-radius:99px;background:var(--lime);color:#0b1206;border:0;font-size:14px;font-weight:600;letter-spacing:.01em;cursor:pointer;overflow:hidden;isolation:isolate;will-change:transform}
-.btn:before{content:"";position:absolute;inset:0;z-index:-1;background:var(--lime-hi);border-radius:inherit;transform:translateY(101%);transition:transform .6s var(--ease)}
-.btn:hover:before{transform:none}
-.btn .roll{display:block;overflow:hidden;height:1.3em;line-height:1.3em}
-.btn .roll span{display:block;transition:transform .6s var(--ease)}
-.btn .roll span:after{content:attr(data-t);display:block}
-.btn:hover .roll span{transform:translateY(-100%)}
-.btn .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#0b1206;color:var(--lime-hi);transition:transform .6s var(--ease)}
-.btn:hover .ic{transform:rotate(45deg)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2);padding:0 28px}
-.btn.ghost:before{background:rgba(255,255,255,.08)}
-.btn.dark{background:var(--paper-ink);color:var(--ink)}
-.btn.dark:before{background:#1d2a1e}
-.btn.dark .ic{background:var(--lime);color:#0b1206}
+/* process */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.steps-line{position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line)}
+.steps-line i{position:absolute;inset:0;background:var(--green-600);transform-origin:left}
+.step{position:relative}
+.step-n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line);font:600 16px/1 var(--head);color:var(--ink);position:relative;z-index:1;transition:background .4s,color .4s,border-color .4s}
+.step:hover .step-n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.step h3{font-size:22px;margin:28px 0 12px}
+.step p{font-size:15.5px;line-height:1.7;max-width:340px}
 
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;padding:140px 0 0}
-.hero-bg{position:absolute;inset:-8% 0 0;z-index:-3;background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=85') center 60%/cover;transform:scale(1.08);will-change:transform}
-.hero-shade{position:absolute;inset:0;z-index:-2;background:
-  radial-gradient(120% 80% at 75% 35%,rgba(6,8,7,.15),rgba(6,8,7,.75) 70%),
-  linear-gradient(90deg,rgba(6,8,7,.94) 0%,rgba(6,8,7,.7) 45%,rgba(6,8,7,.25) 100%),
-  linear-gradient(180deg,rgba(6,8,7,.5) 0%,transparent 30%,transparent 60%,var(--bg) 100%)}
-.hero-grid{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:88px 88px;mask-image:radial-gradient(70% 60% at 70% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(70% 60% at 70% 40%,#000,transparent 75%)}
-.hero-scan{position:absolute;left:0;right:0;top:0;height:30%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(133,196,64,.07) 80%,rgba(182,240,122,.35) 100%);mix-blend-mode:screen;opacity:.5;animation:scan 7s cubic-bezier(.6,0,.4,1) infinite}
-@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(400%)}}
-#spray{position:absolute;inset:0;z-index:0;pointer-events:none;width:100%;height:100%}
-.drone-wrap{position:absolute;z-index:1;right:max(var(--gutter),calc((100% - 1440px)/2));top:15%;width:clamp(260px,34vw,560px);aspect-ratio:1;pointer-events:none}
-.drone{width:100%;height:100%;overflow:visible}
-.drone .spin{transform-box:fill-box;transform-origin:center;animation:spin .14s linear infinite}
-.drone .spin.r{animation-direction:reverse}
-.drone .ring-a{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
-.drone .ring-b{transform-box:fill-box;transform-origin:center;animation:spin 26s linear infinite reverse}
-.drone .ring-t{transform-box:fill-box;transform-origin:center;animation:spin 60s linear infinite}
-.drone .blink{animation:blink 1.6s steps(1) infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes blink{50%{opacity:.15}}
-.hud{position:absolute;font:500 10px/1.5 var(--mono);letter-spacing:.16em;color:rgba(214,230,208,.7);white-space:nowrap}
-.hud b{color:var(--lime-hi);font-weight:500}
-.hud.h1p{left:-6%;top:12%}.hud.h2p{right:-4%;bottom:16%;text-align:right}
-.hero-content{position:relative;z-index:2}
-.h1{font-size:clamp(54px,10vw,168px);line-height:.88;letter-spacing:-.055em;font-weight:600;margin:28px 0 0}
-.h1 em{padding-right:.06em}
-.hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end;margin-top:clamp(28px,3.5vw,48px)}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-stats{position:relative;z-index:2;margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--line-2);display:grid;grid-template-columns:repeat(3,1fr) auto}
-.hero-stats>div{padding:24px 0 30px;display:flex;align-items:baseline;gap:14px}
-.hero-stats>div+div{padding-left:28px;border-left:1px solid var(--line)}
-.hero-stats strong{font-size:clamp(26px,2.6vw,40px);font-weight:600;letter-spacing:-.04em;color:#fff}
-.hero-stats span{font:500 10px/1.5 var(--mono);letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
-.scroll-cue{display:flex!important;align-items:center;gap:14px;justify-content:flex-end}
-.scroll-cue i{position:relative;width:1px;height:46px;background:var(--line-2);overflow:hidden}
-.scroll-cue i:after{content:"";position:absolute;left:0;top:0;width:1px;height:40%;background:var(--lime-hi);animation:cue 2s var(--ease) infinite}
-@keyframes cue{0%{transform:translateY(-100%)}100%{transform:translateY(260%)}}
-
-/* ---------- marquee ---------- */
-.marquee{position:relative;overflow:hidden;padding:clamp(26px,3vw,42px) 0;border-block:1px solid var(--line);background:var(--bg)}
-.marquee-track{display:flex;width:max-content;animation:marquee 45s linear infinite}
-.gsap .marquee-track{animation:none}
-.marquee-group{display:flex;align-items:center;flex:none}
-.marquee span{font-size:clamp(44px,6.5vw,104px);font-weight:600;letter-spacing:-.045em;line-height:1;padding:0 .35em;white-space:nowrap}
-.marquee span.o{color:transparent;-webkit-text-stroke:1px rgba(238,242,234,.45)}
-.marquee span.s{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime-hi);letter-spacing:-.02em}
-.marquee svg{width:clamp(28px,3vw,46px);height:auto;flex:none;color:var(--lime)}
-@keyframes marquee{to{transform:translateX(-50%)}}
-
-/* ---------- technology (light) ---------- */
-.tech{position:relative;background:#f5f6f1;color:var(--paper-ink);border-radius:clamp(28px,4vw,56px) clamp(28px,4vw,56px) 0 0;margin-top:-40px;z-index:2;padding-bottom:clamp(80px,10vw,160px)}
-.tech .eyebrow{color:var(--lime-deep)}
-.tech .eyebrow:before{background:var(--lime-deep);box-shadow:0 0 0 4px rgba(78,127,34,.15)}
-.tech .h2 em{color:var(--lime-deep)}
-.zoom{position:relative}
-.zoom-sticky{position:relative;padding:clamp(90px,10vw,150px) var(--gutter) 0}
-.zoom-head{text-align:center;position:relative;z-index:2}
-.zoom-head .eyebrow{justify-content:center}
-.zoom-head .h2{font-size:clamp(40px,5.6vw,92px)}
-.zoom-media{margin:clamp(36px,4vw,60px) 0 0;position:relative;height:min(80vh,760px);border-radius:var(--radius);overflow:hidden;background:#1b2a1c}
-.zoom-media img{width:100%;height:100%;object-fit:cover;will-change:transform}
-.zoom-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,8,7,.78))}
-.zoom-cap{position:absolute;left:clamp(22px,4vw,64px);right:clamp(22px,4vw,64px);bottom:clamp(26px,4vw,60px);z-index:2;color:#fff;max-width:760px}
-.zoom-cap .eyebrow{color:var(--lime-hi)}
-.zoom-cap .eyebrow:before{background:var(--lime-hi)}
-.zoom-cap p{margin:16px 0 0;font-size:clamp(22px,2.6vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:500}
-.zoom-cap em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.gsap .zoom{height:260vh}
-.gsap .zoom-sticky{position:sticky;top:0;height:100vh;padding:0;overflow:hidden}
-.gsap .zoom-head{position:absolute;left:0;right:0;top:13vh;padding:0 var(--gutter)}
-.gsap .zoom-media{position:absolute;inset:0;margin:0;height:auto;border-radius:0}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,110px);padding-top:clamp(70px,9vw,140px)}
-.story-visual{grid-column:2;grid-row:1;position:sticky;top:12vh;align-self:start;z-index:1}
-.story-steps{grid-column:1;grid-row:1}
-.step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;transition:opacity .6s var(--ease)}
-.gsap .step{opacity:.25}
-.gsap .step.is-active{opacity:1}
-.step .idx{color:var(--lime-deep)}
-.step h3{margin:20px 0 18px;font-size:clamp(32px,3.6vw,60px);line-height:1;letter-spacing:-.045em;font-weight:600}
-.step p{margin:0;font-size:17px;line-height:1.75;color:#4d584e;max-width:470px}
-.plan-card{border-radius:var(--radius);background:#fff;border:1px solid rgba(13,20,14,.08);box-shadow:0 40px 80px -40px rgba(13,30,14,.28);padding:clamp(16px,2vw,26px)}
-.plan-top,.plan-legend{display:flex;justify-content:space-between;gap:10px;font:500 10px/1.3 var(--mono);letter-spacing:.14em;color:#6b766c}
-.plan-status{color:var(--lime-deep)}
-.plan{display:block;width:100%;height:auto;max-height:62vh;margin:14px 0}
-.plan-legend span{display:flex;align-items:center;gap:8px;transition:opacity .4s}
-.gsap .plan-legend span{opacity:.35}
-.plan-legend span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime-deep)}
-.gsap .plan-legend span.on{opacity:1}
-
-/* ---------- services ---------- */
-.services{position:relative;background:var(--bg)}
-.svc-pin{position:relative;overflow:hidden}
-.svc-track{display:flex;gap:clamp(18px,2vw,32px);padding:0 var(--gutter);will-change:transform}
-.svc-intro{flex:none;width:min(560px,40vw);display:flex;flex-direction:column;justify-content:center;padding-right:3vw}
-.svc-intro .lede{margin-top:28px}
-.svc-intro .hint{margin-top:44px;display:flex;align-items:center;gap:14px;font:500 11px/1 var(--mono);letter-spacing:.18em;color:var(--muted)}
-.svc-intro .hint i{width:60px;height:1px;background:linear-gradient(90deg,var(--lime),transparent)}
-.svc{flex:none;width:min(1120px,78vw);height:min(76vh,720px);display:grid;grid-template-columns:1.08fr .92fr;border-radius:var(--radius);overflow:hidden;background:var(--bg-3);border:1px solid var(--line);position:relative}
-.svc{transition:border-color .5s}
-.svc:hover{border-color:rgba(169,217,108,.28)}
-.svc:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;border-radius:inherit;background:radial-gradient(560px circle at var(--mx,50%) var(--my,50%),rgba(169,217,108,.10),transparent 45%);opacity:0;transition:opacity .5s}
-.svc:hover:after{opacity:1}
-.svc-media{position:relative;overflow:hidden;background:radial-gradient(circle at 40% 40%,#1f3120,#0c130d)}
-.svc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15);will-change:transform;filter:saturate(.9) contrast(1.05)}
-.svc-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,7,.1),rgba(6,8,7,.55)),linear-gradient(90deg,transparent 70%,rgba(16,23,17,.9))}
-.svc-num{position:absolute;left:28px;bottom:14px;z-index:2;font-size:clamp(90px,11vw,180px);font-weight:600;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55)}
-.svc-tag{position:absolute;left:28px;top:28px;z-index:2;display:inline-flex;gap:10px;align-items:center;padding:9px 14px;border-radius:99px;background:rgba(6,8,7,.55);backdrop-filter:blur(10px);border:1px solid var(--line-2);font:500 10px/1 var(--mono);letter-spacing:.18em}
-.svc-tag i{width:6px;height:6px;border-radius:50%;background:var(--lime-hi)}
-.svc-body{padding:clamp(28px,3.4vw,56px);display:flex;flex-direction:column}
-.svc-icon{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;border:1px solid var(--line-2);background:linear-gradient(145deg,rgba(133,196,64,.14),transparent)}
-.svc-icon svg{width:34px;height:34px;stroke:var(--lime-hi);fill:none;stroke-width:1.5}
-.svc-body h3{margin:auto 0 0;font-size:clamp(34px,3.6vw,58px);line-height:1;letter-spacing:-.045em;font-weight:600}
-.svc-body h3 em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.pain{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 18px;font-size:15px;line-height:1.65;color:#b6c1b5}
-.pain dt{font:500 10px/1.9 var(--mono);letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
-.pain dt.s{color:var(--lime)}
-.pain dd{margin:0}
-.svc-foot{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font:500 10px/1 var(--mono);letter-spacing:.16em;color:var(--muted)}
-.svc-foot a{display:inline-flex;gap:10px;align-items:center;color:var(--ink);transition:color .3s}
-.svc-foot a:hover{color:var(--lime-hi)}
-.svc-foot svg{width:14px;height:14px}
-.svc-progress{position:absolute;left:var(--gutter);right:var(--gutter);bottom:34px;display:flex;align-items:center;gap:20px;font:500 11px/1 var(--mono);letter-spacing:.16em;color:var(--muted)}
-.svc-progress .bar{flex:1;height:1px;background:var(--line-2)}
-.svc-progress .bar i{display:block;height:100%;background:var(--lime-hi);transform-origin:left;transform:scaleX(0)}
-
-/* ---------- manifesto ---------- */
-.manifesto{background:var(--bg);overflow:hidden}
-.manifesto .orb{position:absolute;width:60vw;height:60vw;max-width:900px;max-height:900px;right:-20vw;top:10%;border-radius:50%;background:radial-gradient(circle,rgba(133,196,64,.16),transparent 65%);filter:blur(10px);pointer-events:none}
-.mani-grid{display:grid;grid-template-columns:.38fr 1fr;gap:clamp(30px,6vw,110px)}
-.mani-side{position:relative}
-.mani-side .sticky{position:sticky;top:130px}
-.mani-text{font-size:clamp(28px,3.4vw,54px);line-height:1.18;letter-spacing:-.03em;font-weight:500;margin:0;text-wrap:pretty}
-.mani-text .w{display:inline;transition:color .2s}
-.mani-text em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.benefits{margin-top:clamp(56px,7vw,100px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-2)}
-.benefit{padding:28px 24px 28px 0;display:flex;flex-direction:column;gap:46px}
-.benefit+.benefit{padding-left:24px;border-left:1px solid var(--line)}
-.benefit .idx{color:var(--lime)}
-.benefit strong{font-size:clamp(18px,1.5vw,22px);font-weight:500;letter-spacing:-.02em;line-height:1.3}
-.mani-cta{margin-top:56px}
-
-/* ---------- impact / map ---------- */
-.impact{background:linear-gradient(180deg,var(--bg),#08100a 40%,var(--bg))}
-.impact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,64px);align-items:stretch}
-.impact-card{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:clamp(28px,3vw,44px);border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(160deg,rgba(133,196,64,.08),rgba(255,255,255,.01) 50%)}
-.impact-number{font-size:clamp(72px,9.5vw,160px);font-weight:600;letter-spacing:-.06em;line-height:.85;background:linear-gradient(180deg,#fff 20%,var(--lime) 130%);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-.impact-label{margin-top:16px;font:500 11px/1 var(--mono);letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
-.states{display:grid}
-.state{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-top:1px solid var(--line);transition:padding .4s var(--ease),color .3s}
-.state:hover{padding-left:12px;color:var(--lime-hi)}
-.state span{font-size:clamp(22px,2vw,30px);font-weight:500;letter-spacing:-.03em}
-.state b{font:500 10px/1 var(--mono);letter-spacing:.18em;color:var(--dim)}
-.map-shell{position:relative;min-height:560px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse at 55% 45%,#1b2e1d,#070d08 72%)}
-.map-shell:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px #060807;z-index:2}
-.map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(182,240,122,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(182,240,122,.06) 1px,transparent 1px);background-size:44px 44px}
-.map-radar{position:absolute;left:50%;top:50%;width:140%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 0deg,rgba(182,240,122,.16),transparent 18%);animation:spin 9s linear infinite;z-index:1;pointer-events:none;mix-blend-mode:screen}
-#agro-map{position:absolute;inset:0;z-index:1}
-.map-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:500 12px/1.8 var(--mono);letter-spacing:.2em;color:var(--muted)}
-.map-label{position:absolute;z-index:3;font:500 10px/1 var(--mono);letter-spacing:.18em;color:rgba(214,230,208,.75)}
-.map-label.tl{left:24px;top:24px}.map-label.tr{right:24px;top:24px}.map-label.bl{left:24px;bottom:24px;color:var(--dim)}
-.map-label strong{color:var(--lime-hi);font-weight:500}
-.maplibregl-control-container{display:none}
+/* presence */
+.presence{background:var(--forest);color:rgba(255,255,255,.75);overflow:hidden}
+.presence h2{color:#fff}
+.presence .eyebrow{color:#b9e08a}
+.presence .lead{color:rgba(255,255,255,.72)}
+.pres-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(36px,5vw,72px);align-items:stretch}
+.pres-info{display:flex;flex-direction:column}
+.pres-info .lead{margin-top:22px}
+.big{margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+.big strong{display:block;font:600 clamp(64px,7vw,100px)/.95 var(--head);letter-spacing:-.045em;color:#fff;font-variant-numeric:tabular-nums}
+.big span{display:block;margin-top:10px;font-size:15px;color:rgba(255,255,255,.65)}
+.state-list{margin-top:auto;padding-top:40px;display:grid}
+.state-btn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:18px 4px;border:0;border-top:1px solid rgba(255,255,255,.12);background:none;color:#fff;cursor:pointer;text-align:left;font:500 18px/1.2 var(--head);transition:padding .4s var(--ease),color .3s}
+.state-btn:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+.state-btn b{font:600 12px/1 var(--body);letter-spacing:.1em;color:rgba(255,255,255,.55);padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:6px;transition:all .3s}
+.state-btn:hover,.state-btn.on{padding-left:12px;color:#c9eb9f}
+.state-btn:hover b,.state-btn.on b{background:var(--green);border-color:var(--green);color:#0d1a0a}
+.map-card{position:relative;min-height:600px;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 60% 40%,#173220 0%,#0b1a0f 70%);border:1px solid rgba(255,255,255,.08)}
+#map{position:absolute;inset:0}
+.map-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:56px 24px;color:rgba(255,255,255,.6);font-weight:500}
+.map-fallback svg{width:100%;height:100%}
+.map-fallback path{transition:opacity .3s}
+.map-head{position:absolute;left:22px;top:20px;right:22px;z-index:2;display:flex;justify-content:space-between;gap:12px;pointer-events:none;font:600 11px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.map-legend{display:flex;gap:16px}
+.map-legend span{display:inline-flex;align-items:center;gap:7px}
+.map-legend i{width:10px;height:10px;border-radius:3px;background:var(--green)}
+.map-legend i.o{background:#24402a;border:1px solid #37573d}
+.map-note{position:absolute;left:22px;bottom:18px;right:22px;z-index:2;font-size:12px;color:rgba(255,255,255,.45);pointer-events:none}
 .maplibregl-canvas{outline:0}
-.state-marker{pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:7px;filter:drop-shadow(0 6px 15px rgba(0,0,0,.7))}
-.state-marker:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime-hi);box-shadow:0 0 0 5px rgba(182,240,122,.18),0 0 16px var(--lime-hi);order:2;animation:pulse 2.4s ease-in-out infinite}
-.state-marker span{border:1px solid rgba(182,240,122,.4);border-radius:99px;background:rgba(7,18,12,.92);padding:7px 12px;font:500 9px/1 var(--mono);color:#fff;letter-spacing:.16em;white-space:nowrap}
+.maplibregl-control-container{display:none}
+.mk{display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none}
+.mk>*{opacity:0;transform:translateY(6px);transition:opacity .6s var(--ease),transform .6s var(--ease),background .3s,border-color .3s,color .3s}
+.mk.show>*{opacity:1;transform:none}
+.mk-label{padding:7px 11px;border-radius:8px;background:rgba(9,20,12,.88);border:1px solid rgba(255,255,255,.14);color:#fff;font:600 12px/1 var(--body);white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.mk-label b{color:var(--green);margin-right:6px;font-weight:600}
+.mk-dot{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+.mk.on .mk-label{background:var(--green);border-color:var(--green);color:#0d1a0a}
+.mk.on .mk-label b{color:#0d1a0a}
 
-/* ---------- enterprise (light) ---------- */
-.enterprise{background:var(--paper);color:var(--paper-ink);border-radius:clamp(28px,4vw,56px) clamp(28px,4vw,56px) 0 0;margin-top:-1px}
-.enterprise .eyebrow{color:var(--lime-deep)}
-.enterprise .eyebrow:before{background:var(--lime-deep);box-shadow:0 0 0 4px rgba(78,127,34,.15)}
-.enterprise .h2 em{color:var(--lime-deep)}
-.enterprise .lede{color:#4d584e}
-.ent-list{border-top:1px solid rgba(13,20,14,.14)}
-.ent{position:relative;display:grid;grid-template-columns:120px 1fr 1fr 60px;gap:32px;align-items:center;padding:clamp(28px,3.4vw,48px) 0;border-bottom:1px solid rgba(13,20,14,.14);overflow:hidden;isolation:isolate}
-.ent:before{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper-ink);transform:scaleY(0);transform-origin:bottom;transition:transform .7s var(--ease)}
-.ent:hover:before{transform:scaleY(1)}
-.ent>*{transition:color .5s,transform .7s var(--ease)}
-.ent:hover>*{color:var(--ink)}
-.ent:hover .ent-i{color:var(--lime-hi)}
-.ent:hover h3{transform:translateX(18px)}
-.ent-i{font:500 11px/1 var(--mono);letter-spacing:.16em;color:var(--lime-deep)}
-.ent h3{margin:0;font-size:clamp(26px,3vw,46px);line-height:1.02;letter-spacing:-.04em;font-weight:600}
-.ent p{margin:0;font-size:15px;line-height:1.7;color:#4d584e}
-.ent .arr{width:56px;height:56px;border-radius:50%;border:1px solid rgba(13,20,14,.2);display:grid;place-items:center;transition:background .5s,border-color .5s,transform .7s var(--ease)}
-.ent .arr svg{width:18px;height:18px}
-.ent:hover .arr{background:var(--lime);border-color:var(--lime);color:#0b1206;transform:rotate(45deg)}
-.ent-foot{margin-top:clamp(40px,5vw,72px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;padding:clamp(24px,3vw,40px);border-radius:var(--radius);background:#dfe4d6}
-.ent-foot p{margin:0;font-size:17px;line-height:1.6;color:#3e493f;max-width:560px}
-.ent-foot strong{color:var(--paper-ink);font-weight:600}
+/* enterprise */
+.ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ent{padding:34px 30px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:border-color .4s,box-shadow .4s,translate .5s var(--ease)}
+.ent:hover{border-color:#cdd8c6;box-shadow:var(--shadow);translate:0 -4px}
+.ent-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:#eef5e6;color:var(--green-700)}
+.ent-ic svg{width:24px;height:24px}
+.ent small{display:block;margin-top:28px;font:600 11px/1 var(--body);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.ent h3{font-size:22px;line-height:1.25;margin:12px 0}
+.ent p{font-size:15.5px;line-height:1.7}
+.band{margin-top:24px;padding:32px 36px;border-radius:var(--radius);background:var(--soft);display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.band p{max-width:620px}
+.band strong{display:block;font:600 20px/1.3 var(--head);color:var(--ink);margin-bottom:4px}
 
-/* ---------- projects ---------- */
-.projects{background:var(--paper);padding-top:0}
-.proj{position:relative;border-radius:clamp(28px,4vw,56px);background:radial-gradient(90% 90% at 80% 30%,#20381c,#0b120c 60%,#060807);color:var(--ink);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:760px;isolation:isolate}
-.proj-glow{position:absolute;width:700px;height:700px;right:-120px;top:-140px;border-radius:50%;background:radial-gradient(circle,rgba(182,240,122,.22),transparent 65%);z-index:-1;pointer-events:none}
-.proj-content{padding:clamp(36px,5.5vw,96px);display:flex;flex-direction:column;justify-content:center}
-.proj-word{margin:30px 0 0;font-size:clamp(60px,8vw,132px);font-weight:700;letter-spacing:-.06em;line-height:.85}
-.proj-word span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime-hi);letter-spacing:-.03em}
-.proj-content h3{margin:28px 0 14px;font-size:clamp(22px,2vw,30px);font-weight:500;letter-spacing:-.02em}
-.proj-content p{margin:0;color:#b6c1b5;line-height:1.75;max-width:500px}
-.proj-content p strong{color:#fff;font-weight:600}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 38px}
-.tags span{padding:9px 14px;border-radius:99px;border:1px solid var(--line-2);font:500 10px/1 var(--mono);letter-spacing:.14em;color:#d3dcd1}
-.proj-visual{position:relative;display:grid;place-items:center;perspective:1200px;min-height:620px}
-.orbit{position:absolute;border-radius:50%;border:1px dashed rgba(182,240,122,.22);left:50%;top:50%;translate:-50% -50%}
-.orbit.o1{width:520px;height:520px;animation:spin 50s linear infinite}
-.orbit.o2{width:720px;height:720px;border-style:solid;border-color:rgba(255,255,255,.06);animation:spin 80s linear infinite reverse}
-.orbit i{position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--lime-hi);box-shadow:0 0 20px var(--lime-hi)}
-.phone{position:relative;width:300px;height:610px;border-radius:46px;padding:14px;background:linear-gradient(150deg,#2a332b,#0c110d);box-shadow:0 60px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08) inset,0 0 0 9px #050705;transform-style:preserve-3d;will-change:transform}
-.phone-screen{height:100%;border-radius:34px;overflow:hidden;background:linear-gradient(180deg,#0f1810,#070b08);padding:22px 18px;display:flex;flex-direction:column;gap:12px;position:relative}
-.phone-screen:before{content:"";position:absolute;left:50%;top:10px;width:90px;height:24px;margin-left:-45px;border-radius:99px;background:#000}
-.ph-bar{margin-top:34px;display:flex;justify-content:space-between;font:500 9px/1 var(--mono);letter-spacing:.16em;color:var(--muted)}
-.ph-bar b{color:var(--lime-hi);font-weight:500}
-.ph-title{font-size:28px;line-height:1.05;letter-spacing:-.04em;font-weight:600;margin:14px 0 8px}
-.ph-title em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.ph-card{padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);display:grid;gap:6px}
-.ph-card span{font:500 8.5px/1 var(--mono);letter-spacing:.16em;color:var(--lime)}
-.ph-card strong{font-size:14px;font-weight:500}
-.ph-card i{height:5px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:6px}
-.ph-card i:after{content:"";display:block;height:100%;width:var(--w,60%);border-radius:inherit;background:linear-gradient(90deg,var(--lime-deep),var(--lime-hi));animation:fill 3.4s var(--ease) infinite alternate}
-@keyframes fill{from{width:18%}}
-.ph-foot{margin-top:auto;text-align:center;font:500 8.5px/1 var(--mono);letter-spacing:.2em;color:var(--dim)}
-.float-chip{position:absolute;z-index:2;padding:12px 16px;border-radius:16px;background:rgba(14,22,15,.75);backdrop-filter:blur(12px);border:1px solid var(--line-2);font:500 10px/1.4 var(--mono);letter-spacing:.12em;color:#d3dcd1;box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
-.float-chip b{display:block;color:var(--lime-hi);font-weight:500}
-.float-chip.c1{left:8%;top:24%;animation:bob 6s ease-in-out infinite}
-.float-chip.c2{right:6%;bottom:26%;animation:bob 7s ease-in-out -2s infinite}
-@keyframes bob{50%{transform:translateY(-14px)}}
-.proj-note{position:absolute;bottom:22px;left:0;right:0;text-align:center;font:500 9px/1 var(--mono);letter-spacing:.2em;color:var(--dim)}
+/* LIBER AGRO */
+.agro{background:var(--soft);overflow:hidden}
+.agro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.agro-mark{font:700 clamp(40px,4.4vw,60px)/1 var(--head);letter-spacing:-.04em;color:var(--ink);margin-top:20px}
+.agro-mark span{color:var(--green-600)}
+.agro h3{font-size:22px;margin:22px 0 12px;font-weight:500}
+.agro .feat{list-style:none;padding:0;margin:28px 0 34px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.agro .feat li{display:flex;gap:10px;align-items:center;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-weight:500;font-size:15px;color:var(--ink)}
+.agro .feat svg{width:18px;height:18px;color:var(--green-600);flex:none}
+.agro-visual{position:relative;display:grid;place-items:center;padding:20px 0 40px}
+.agro-visual:before{content:"";position:absolute;width:min(520px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#e1eed3,transparent 68%)}
+.phone{position:relative;width:min(300px,78vw);aspect-ratio:300/610;border-radius:44px;padding:11px;background:#0f1a12;box-shadow:0 50px 90px -40px rgba(15,26,18,.55),inset 0 0 0 1px rgba(255,255,255,.08);will-change:transform}
+.screen{height:100%;border-radius:34px;background:#fff;overflow:hidden;display:flex;flex-direction:column;padding:46px 18px 18px;position:relative}
+.screen:before{content:"";position:absolute;top:12px;left:50%;width:86px;height:24px;margin-left:-43px;border-radius:999px;background:#0f1a12}
+.sc-top{display:flex;justify-content:space-between;align-items:center;font:600 12px/1 var(--body);color:var(--ink)}
+.sc-top span{color:var(--green-600)}
+.sc-title{font:600 24px/1.1 var(--head);letter-spacing:-.03em;color:var(--ink);margin:22px 0 18px}
+.sc-card{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.sc-card small{display:block;font:600 10px/1 var(--body);letter-spacing:.1em;color:var(--green-700)}
+.sc-card strong{display:block;margin-top:6px;font:500 14px/1.3 var(--body);color:var(--ink)}
+.sc-card i{display:block;height:5px;border-radius:9px;background:#eef1ec;margin-top:12px;overflow:hidden}
+.sc-card i:after{content:"";display:block;height:100%;width:var(--w);border-radius:inherit;background:var(--green)}
+.sc-foot{margin-top:auto;text-align:center;font:600 10px/1 var(--body);letter-spacing:.12em;color:var(--muted)}
+.agro-note{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:12px;color:var(--muted)}
 
-/* ---------- CTA ---------- */
-.cta{position:relative;overflow:hidden;text-align:center;padding:clamp(120px,16vw,240px) 0;background:var(--bg);isolation:isolate}
-.cta-rings{position:absolute;left:50%;top:50%;z-index:-1;pointer-events:none;width:1px;height:1px}
-.cta-rings i{position:absolute;left:0;top:0;border-radius:50%;border:1px solid rgba(133,196,64,.22);translate:-50% -50%;width:var(--s);height:var(--s);animation:ripple 6s linear infinite;opacity:0}
-.cta-rings i:nth-child(2){animation-delay:-1.5s}.cta-rings i:nth-child(3){animation-delay:-3s}.cta-rings i:nth-child(4){animation-delay:-4.5s}
-@keyframes ripple{0%{width:120px;height:120px;opacity:0}15%{opacity:1}100%{width:1500px;height:1500px;opacity:0}}
-.cta-glow{position:absolute;left:50%;top:50%;width:900px;height:900px;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(133,196,64,.22),transparent 60%);z-index:-1}
-.cta .eyebrow{justify-content:center}
-.cta h2{font-size:clamp(44px,7.4vw,128px);line-height:.92;letter-spacing:-.055em;font-weight:600;margin:28px auto 0;max-width:1300px}
-.cta h2 em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.cta p{margin:32px auto 44px;max-width:600px;color:#b9c4b8;font-size:17px;line-height:1.75}
+/* CTA */
+.cta{position:relative;overflow:hidden;isolation:isolate;color:#fff;text-align:center;padding:clamp(110px,13vw,170px) 0;background:var(--forest)}
+.cta-bg{position:absolute;inset:-12% 0;z-index:-2;background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=75') center/cover;will-change:transform}
+.cta:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,20,12,.82),rgba(9,20,12,.9))}
+.cta .eyebrow{color:#b9e08a}
+.cta h2{color:#fff;font-size:clamp(36px,4.8vw,64px);line-height:1.06;margin:20px auto 0;max-width:900px}
+.cta p{max-width:600px;margin:24px auto 36px;color:rgba(255,255,255,.75);font-size:18px;line-height:1.7}
 
-/* ---------- form ---------- */
-.contact{background:var(--bg)}
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,120px);align-items:start}
-.contact-aside .h2{font-size:clamp(52px,7vw,116px)}
-.contact-aside .lede{margin-top:28px}
-.contact-list{margin-top:44px;display:grid;border-top:1px solid var(--line)}
-.contact-list a,.contact-list div{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);font-size:16px;transition:color .3s,padding .4s var(--ease)}
-.contact-list a:hover{color:var(--lime-hi);padding-left:10px}
-.contact-list span{font:500 10px/1 var(--mono);letter-spacing:.18em;color:var(--dim)}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;padding:clamp(26px,3.6vw,56px);border-radius:var(--radius);background:linear-gradient(160deg,var(--bg-3),var(--bg-2));border:1px solid var(--line)}
-.form-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font:500 10px/1 var(--mono);letter-spacing:.18em;color:var(--muted)}
-.form-head b{color:var(--lime-hi);font-weight:500}
-.field{position:relative;display:block;padding-top:22px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.contact-grid .lead{margin-top:22px}
+.c-list{margin-top:40px;display:grid}
+.c-list>*{display:flex;gap:16px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+.c-list>*:last-child{border-bottom:1px solid var(--line)}
+.c-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--green-700);flex:none}
+.c-ic svg{width:20px;height:20px}
+.c-list small{display:block;font:600 11px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.c-list strong{font:500 17px/1.3 var(--body);color:var(--ink);transition:color .3s}
+a.c-row:hover strong{color:var(--green-700)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;padding:clamp(26px,3.5vw,44px);border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;gap:8px}
 .field.full{grid-column:1/-1}
-.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-2);border-radius:0;padding:14px 0 14px;font-size:17px;color:#fff;outline:none;transition:border-color .3s;appearance:none;-webkit-appearance:none}
-.field select{cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b6f07a' stroke-width='1.5'/%3E%3C/svg%3E") right 4px center no-repeat}
-.field select option{background:#0f1610;color:#fff}
-.field textarea{min-height:110px;resize:vertical}
-.field .lbl{position:absolute;left:0;top:0;font:500 10px/1 var(--mono);letter-spacing:.18em;color:var(--muted);transition:color .3s}
-.field:focus-within .lbl{color:var(--lime-hi)}
-.field:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--lime-hi);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
-.field.full:has(textarea):after{bottom:6px}
-.field:focus-within:after{transform:scaleX(1)}
-.field ::placeholder{color:#58655a}
-.form .btn{grid-column:1/-1;justify-self:start;margin-top:26px}
-.fine{grid-column:1/-1;margin:8px 0 0;color:var(--dim);font-size:12.5px;line-height:1.7}
+.field label{font:500 14px/1 var(--body);color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border:1px solid #d7ded3;border-radius:10px;background:#fbfcfa;color:var(--ink);font-size:16px;outline:none;transition:border-color .25s,box-shadow .25s,background .25s;appearance:none;-webkit-appearance:none}
+.field select{background:#fbfcfa url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%233f4a42' stroke-width='1.6'/%3E%3C/svg%3E") right 16px center no-repeat;padding-right:40px;cursor:pointer}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green-600);background:#fff;box-shadow:0 0 0 4px rgba(133,196,64,.18)}
+.field ::placeholder{color:#9aa49c}
+.form .btn{grid-column:1/-1;width:100%;height:56px}
+.fine{grid-column:1/-1;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
 
-/* ---------- footer ---------- */
-footer{position:relative;background:var(--bg);border-top:1px solid var(--line);padding:clamp(56px,7vw,100px) 0 28px;overflow:hidden}
-.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:clamp(48px,6vw,90px)}
-.foot-top h4{margin:0 0 18px;font:500 10px/1 var(--mono);letter-spacing:.2em;color:var(--dim)}
-.foot-top a,.foot-top p{display:block;margin:0 0 10px;color:#c5cfc3;font-size:15px;transition:color .3s}
-.foot-top a:hover{color:var(--lime-hi)}
-.foot-claim{font-size:clamp(26px,2.6vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:500;max-width:440px;margin:0}
-.foot-claim em{font-family:var(--serif);font-weight:400;color:var(--lime-hi)}
-.giant{font-size:clamp(64px,15.6vw,300px);font-weight:700;letter-spacing:-.065em;line-height:.8;white-space:nowrap;text-align:center;margin:0 -1vw;user-select:none;background:linear-gradient(180deg,rgba(238,242,234,.95),rgba(238,242,234,.05) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.giant span{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.04em;background:linear-gradient(180deg,var(--lime-hi),rgba(133,196,64,.05) 90%);-webkit-background-clip:text;background-clip:text}
-.foot-bottom{margin-top:30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:500 10px/1.6 var(--mono);letter-spacing:.16em;color:var(--dim)}
+/* footer */
+footer{background:var(--forest);color:rgba(255,255,255,.66);padding:72px 0 32px;font-size:15px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1)}
+.f-grid .logo{width:200px}
+.f-grid p.claim{margin-top:20px;max-width:340px;line-height:1.7}
+.f-grid h4{color:#fff;font:600 13px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.f-grid a,.f-grid .t{display:block;margin-bottom:12px;transition:color .3s}
+.f-grid a:hover{color:#fff}
+.f-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:rgba(255,255,255,.45)}
 
-/* ---------- whatsapp ---------- */
-.floating{position:fixed;right:22px;bottom:22px;z-index:80;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25d366;box-shadow:0 14px 40px rgba(37,211,102,.35);transition:transform .4s var(--ease)}
-.floating:before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25d366;animation:wa 2.6s ease-out infinite}
-@keyframes wa{to{transform:scale(1.7);opacity:0}}
-.floating:hover{transform:scale(1.08)}
-.floating svg{width:30px;height:30px;fill:#fff}
+/* whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:40;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;box-shadow:0 10px 28px rgba(0,0,0,.22);transition:scale .35s var(--ease)}
+.wa:hover{scale:1.07}
+.wa svg{width:28px;height:28px;fill:#fff}
 
-/* ---------- responsive ---------- */
-@media (max-width:1100px){
-  .menu{display:none}
+/* responsive */
+@media (max-width:1060px){
+  .nav,.hdr .bar>.btn{display:none}
   .burger{display:block}
-  .header-cta .txt{display:none}
-  .header-cta{padding:6px}
-  .nav{padding-left:16px}
-  .sec-head{grid-template-columns:1fr}
-  .sec-head .lede{justify-self:start}
-  .svc-track{flex-direction:column;padding:0}
-  .svc-intro{width:100%;padding:0 0 30px}
-  .svc{width:100%;height:auto;grid-template-columns:1fr}
-  .svc-media{aspect-ratio:16/10}
-  .svc-media:after{background:linear-gradient(180deg,rgba(6,8,7,.05),rgba(6,8,7,.6))}
-  .svc-body h3{margin-top:28px}
-  .svc-progress{display:none}
-  .services .svc-pin{width:min(1440px,100% - var(--gutter)*2);margin-inline:auto;overflow:visible}
-  .story{grid-template-columns:1fr;gap:0}
-  .story-visual{grid-column:1;grid-row:1;top:72px;background:#f5f6f1;padding:10px 0 14px}
-  .story-steps{grid-column:1;grid-row:2}
-  .step{min-height:62vh;justify-content:flex-end;padding-bottom:10vh}
-  .plan{width:auto;max-width:100%;max-height:30vh;margin:10px auto}
-  .plan-legend{display:none}
-  .mani-grid{grid-template-columns:1fr}
-  .benefits{grid-template-columns:1fr 1fr}
-  .benefit:nth-child(3){padding-left:0;border-left:0}
-  .benefit:nth-child(n+3){border-top:1px solid var(--line)}
-  .impact-layout{grid-template-columns:1fr}
-  .ent{grid-template-columns:80px 1fr 56px;gap:18px 24px}
-  .ent p{grid-column:2/3}
-  .ent .arr{grid-row:1;grid-column:3}
-  .proj{grid-template-columns:1fr}
-  .proj-visual{min-height:680px}
-  .contact-grid{grid-template-columns:1fr}
-  .foot-top{grid-template-columns:1fr 1fr}
-  .foot-top>div:first-child{grid-column:1/-1}
+  .sec-head,.about-grid,.pres-grid,.agro-grid,.contact-grid{grid-template-columns:1fr}
+  .sec-head .lead{justify-self:start}
+  .cards{grid-template-columns:1fr 1fr}
+  .cards .card:last-child{grid-column:1/-1}
+  .cards .card:last-child .card-media{aspect-ratio:16/7}
+  .ent-grid{grid-template-columns:1fr}
+  .map-card{min-height:520px}
+  .agro-visual{order:-1}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .f-grid>div:first-child{grid-column:1/-1}
 }
-@media (max-width:760px){
-  .site-header{padding:12px 0}
-  .logo{width:160px}
-  .hero{padding-top:110px}
-  .drone-wrap{width:64vw;max-width:320px;top:70px;right:-10vw;opacity:.55}
-  .hud{display:none}
-  .scroll-cue{display:none!important}
-  .hero-stats{grid-template-columns:1fr 1fr 1fr}
-  .hero-stats>div:nth-child(3){padding-left:14px!important;border-left:1px solid var(--line)!important;border-top:0!important}
-  .hero-stats>div+div{padding-left:14px}
-  .step h3{font-size:30px}
-  .step p{font-size:15.5px}
-  .hero-row{grid-template-columns:1fr}
-  .hero-stats>div{padding:18px 0 20px;flex-direction:column;gap:4px}
-  .scroll-cue{justify-content:flex-start}
-  .btn{height:56px;font-size:13px;padding-left:22px}
-  .btn .ic{width:42px;height:42px}
-  .btn.ghost{padding:0 22px}
-  .pain{grid-template-columns:1fr;gap:4px}
-  .pain dd{margin-bottom:12px}
-  .svc-num{font-size:96px}
-  .benefits{grid-template-columns:1fr}
-  .benefit,.benefit+.benefit{padding:22px 0;border-left:0;flex-direction:row;align-items:center;gap:20px}
-  .benefit+.benefit{border-top:1px solid var(--line)}
-  .map-shell{min-height:420px}
-  .ent{grid-template-columns:1fr 48px}
-  .ent-i{grid-column:1/-1}
-  .ent h3{grid-column:1}
-  .ent p{grid-column:1/-1}
-  .ent .arr{grid-row:2;grid-column:2;width:48px;height:48px}
-  .ent:hover h3{transform:none}
-  .proj-visual{min-height:600px;transform:scale(.88)}
-  .orbit.o2{display:none}
-  .float-chip.c1{left:0;top:18%}.float-chip.c2{right:0;bottom:18%}
+@media (max-width:720px){
+  .hdr .bar{height:72px}
+  .logo{width:168px}
+  .hero-content{padding:130px 0 40px}
+  .hero:before{background:linear-gradient(180deg,rgba(8,17,10,.55) 0%,rgba(8,17,10,.45) 35%,rgba(8,17,10,.88) 75%)}
+  .hero-actions .btn{flex:1 1 100%}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact{flex-direction:column;gap:6px;padding:20px 0 22px}
+  .fact:nth-child(3){grid-column:1/-1;padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+  .fact+.fact{padding-left:18px}
+  .checks{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .cards .card:last-child .card-media{aspect-ratio:4/3}
+  .steps{grid-template-columns:1fr;gap:36px;padding-left:76px}
+  .steps-line{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .steps-line i{transform-origin:top}
+  .step-n{position:absolute;left:-76px;top:0}
+  .step h3{margin-top:12px}
+  .map-card{min-height:440px;border-radius:16px}
+  .map-legend{display:none}
+  .agro .feat{grid-template-columns:1fr}
+  .band{padding:26px 22px}
+  .band .btn{width:100%}
   .form{grid-template-columns:1fr}
-  .foot-top{grid-template-columns:1fr}
-  .foot-bottom{flex-direction:column}
-  .floating{width:54px;height:54px;right:16px;bottom:16px}
+  .f-grid{grid-template-columns:1fr;gap:36px}
+  .wa{width:52px;height:52px;right:16px;bottom:16px}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  *,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}
   html{scroll-behavior:auto}
-  .hero-scan,.grain{display:none}
 }
-@media (hover:none){.cursor,.cursor-dot{display:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-star" viewBox="0 0 40 40"><path d="M20 0c1.2 10.6 8.4 18.2 20 20-11.6 1.8-18.8 9.4-20 20-1.2-10.6-8.4-18.2-20-20C11.6 18.2 18.8 10.6 20 0z" fill="currentColor"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".14"/><path d="m7.5 12.2 3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16 .5A15.4 15.4 0 0 0 2.7 23.7L.5 31.5l8-2.1A15.5 15.5 0 1 0 16 .5zm0 28.2c-2.4 0-4.8-.7-6.8-2l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.7 12.7 0 1 1 16 28.7zm7-9.5c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.7-.2-.9.2s-1 1.2-1.2 1.4c-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.2.7-.1 2.3-1 2.6-2 .3-1 .3-1.9.2-2.1-.1-.2-.3-.3-.7-.5z"/></symbol>
 </svg>
 
-<div class="loader" aria-hidden="true">
-  <div class="loader-inner">
-    <img class="loader-logo" src="/liber-drones-logo.webp" alt="" width="1200" height="82">
-    <div class="loader-bar"><i></i></div>
-    <div class="loader-meta"><span>PREPARANDO DECOLAGEM</span><span>PA · TO · MA</span></div>
-  </div>
-</div>
-<div class="grain" aria-hidden="true"></div>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<div class="cursor" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div>
-
-<header class="site-header" id="header">
-  <div class="wrap nav">
-    <a href="#inicio" class="logo" aria-label="LIBER DRONES — início"><img src="/liber-drones-logo.webp" alt="LIBER DRONES" width="1200" height="82" decoding="async"></a>
-    <nav class="menu" aria-label="Navegação principal">
-      <a href="#tecnologia">Tecnologia</a>
+<header class="hdr" id="hdr">
+  <div class="wrap bar">
+    <a href="#inicio" class="logo" aria-label="LIBER DRONES — início">
+      <img class="light" src="/liber-drones-logo.webp" alt="LIBER DRONES" width="1200" height="82">
+      <img class="dark" src="/liber-drones-logo-dark.webp" alt="" width="1200" height="82" aria-hidden="true">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
       <a href="#servicos">Serviços</a>
+      <a href="#como-atuamos">Como atuamos</a>
       <a href="#atuacao">Atuação</a>
-      <a href="#empresas">Operações</a>
+      <a href="#empresas">Empresas</a>
       <a href="#projetos">LIBER AGRO</a>
     </nav>
-    <div style="display:flex;gap:10px;align-items:center">
-      <a href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20LIBER%20DRONES%21%20Quero%20solicitar%20um%20or%C3%A7amento." class="header-cta magnetic" target="_blank" rel="noopener noreferrer" aria-label="Fale com um especialista pelo WhatsApp"><span class="txt">Fale com um especialista</span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
-      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
-    </div>
+    <a href="#orcamento" class="btn btn-primary">Solicitar orçamento</a>
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
   </div>
 </header>
-
-<nav class="mobile-menu" id="mobile-menu" aria-label="Menu">
-  <a class="big" href="#tecnologia"><em>01</em>Tecnologia</a>
-  <a class="big" href="#servicos"><em>02</em>Serviços</a>
-  <a class="big" href="#atuacao"><em>03</em>Atuação</a>
-  <a class="big" href="#empresas"><em>04</em>Operações</a>
-  <a class="big" href="#projetos"><em>05</em>LIBER AGRO</a>
-  <a class="big" href="#orcamento"><em>06</em>Orçamento</a>
-  <div class="mm-foot"><span>PA · TO · MA</span><span>+55 98 98148-0329</span></div>
+<nav class="mnav" id="mnav" aria-label="Menu">
+  <a href="#servicos">Serviços</a>
+  <a href="#como-atuamos">Como atuamos</a>
+  <a href="#atuacao">Atuação</a>
+  <a href="#empresas">Empresas</a>
+  <a href="#projetos">LIBER AGRO</a>
+  <a href="#orcamento" class="btn btn-primary">Solicitar orçamento</a>
 </nav>
 
 <main id="conteudo">
 
-<!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-bg" data-hero-bg></div>
-  <div class="hero-shade"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-scan"></div>
-  <canvas id="spray" aria-hidden="true"></canvas>
-
-  <div class="drone-wrap" aria-hidden="true">
-    <svg class="drone" viewBox="0 0 400 400">
-      <defs>
-        <radialGradient id="rotor" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#b6f07a" stop-opacity=".22"/><stop offset="1" stop-color="#b6f07a" stop-opacity="0"/></radialGradient>
-        <path id="tp" d="M200 200m-178 0a178 178 0 1 1 356 0a178 178 0 1 1-356 0"/>
-      </defs>
-      <g class="ring-t"><text font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="5.2" fill="rgba(214,230,208,.55)"><textPath href="#tp">PULVERIZAÇÃO ✦ DISPERSÃO DE SÓLIDOS ✦ MAPEAMENTO ✦ PARÁ · TOCANTINS · MARANHÃO ✦</textPath></text></g>
-      <g class="ring-a"><circle cx="200" cy="200" r="160" fill="none" stroke="rgba(182,240,122,.35)" stroke-width="1" stroke-dasharray="2 9"/></g>
-      <g class="ring-b"><circle cx="200" cy="200" r="142" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="60 30 4 30"/></g>
-      <g stroke="rgba(182,240,122,.7)" stroke-width="1.4" fill="none">
-        <path d="M30 60V30h30M370 60V30h-30M30 340v30h30M370 340v30h-30"/>
-      </g>
-      <g class="drone-body">
-        <g stroke="#dfe9da" stroke-width="7" stroke-linecap="round"><path d="M200 200 110 110M200 200l90-90M200 200l-90 90M200 200l90 90"/></g>
-        <g stroke="#0b1206" stroke-width="3" stroke-linecap="round"><path d="M200 200 110 110M200 200l90-90M200 200l-90 90M200 200l90 90"/></g>
-        <g>
-          <circle cx="110" cy="110" r="58" fill="url(#rotor)" stroke="rgba(182,240,122,.25)"/>
-          <circle cx="290" cy="110" r="58" fill="url(#rotor)" stroke="rgba(182,240,122,.25)"/>
-          <circle cx="110" cy="290" r="58" fill="url(#rotor)" stroke="rgba(182,240,122,.25)"/>
-          <circle cx="290" cy="290" r="58" fill="url(#rotor)" stroke="rgba(182,240,122,.25)"/>
-        </g>
-        <g fill="rgba(238,242,234,.55)">
-          <g class="spin"><rect x="54" y="107" width="112" height="6" rx="3"/><rect x="107" y="54" width="6" height="112" rx="3" opacity=".35"/></g>
-          <g class="spin r"><rect x="234" y="107" width="112" height="6" rx="3"/><rect x="287" y="54" width="6" height="112" rx="3" opacity=".35"/></g>
-          <g class="spin r"><rect x="54" y="287" width="112" height="6" rx="3"/><rect x="107" y="234" width="6" height="112" rx="3" opacity=".35"/></g>
-          <g class="spin"><rect x="234" y="287" width="112" height="6" rx="3"/><rect x="287" y="234" width="6" height="112" rx="3" opacity=".35"/></g>
-        </g>
-        <g fill="#0b1206" stroke="#dfe9da" stroke-width="2"><circle cx="110" cy="110" r="10"/><circle cx="290" cy="110" r="10"/><circle cx="110" cy="290" r="10"/><circle cx="290" cy="290" r="10"/></g>
-        <rect x="160" y="150" width="80" height="100" rx="26" fill="#0e150f" stroke="#dfe9da" stroke-width="2"/>
-        <rect x="172" y="166" width="56" height="44" rx="14" fill="none" stroke="rgba(182,240,122,.6)" stroke-width="1.5"/>
-        <circle cx="200" cy="230" r="7" fill="#85c440"/>
-        <circle cx="200" cy="230" r="13" fill="none" stroke="#85c440" stroke-opacity=".4"/>
-        <circle class="blink" cx="180" cy="158" r="3" fill="#b6f07a"/><circle class="blink" cx="220" cy="158" r="3" fill="#ff5a4e" style="animation-delay:-.8s"/>
-      </g>
-    </svg>
-    <div class="hud h1p"><b>●</b> LIBER DRONES<br>OPERAÇÃO AÉREA</div>
-    <div class="hud h2p">05°31′S 47°28′O<br><b>AGRO / PRECISÃO</b></div>
+  <div class="hero-media">
+    <img src="/assets/dji-1400.webp" srcset="/assets/dji-800.webp 800w, /assets/dji-1400.webp 1400w, /assets/dji-2400.webp 2400w" sizes="100vw" alt="Drone agrícola em operação de pulverização sobre lavoura" width="2400" height="1600" fetchpriority="high" decoding="async">
   </div>
-
   <div class="wrap hero-content">
-    <div class="eyebrow" data-hero>Tecnologia aérea para o agronegócio</div>
-    <h1 class="h1">
-      <span class="line"><span data-hero-line>Sua lavoura</span></span>
-      <span class="line"><span data-hero-line>não pode</span></span>
-      <span class="line"><span data-hero-line><em>esperar.</em></span></span>
-    </h1>
-    <div class="hero-row">
-      <p class="lede" data-hero>Janela de aplicação curta, terreno difícil e operação atrasada? Levamos tecnologia aérea e planejamento ao campo para ajudar sua lavoura a avançar no momento certo.</p>
-      <div class="hero-actions" data-hero>
-        <a href="#orcamento" class="btn magnetic"><span class="roll"><span data-t="Solicitar orçamento">Solicitar orçamento</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
-        <a href="#servicos" class="btn ghost magnetic"><span class="roll"><span data-t="Conhecer soluções">Conhecer soluções</span></span></a>
-      </div>
+    <div class="eyebrow" data-h>Tecnologia aérea para o agronegócio</div>
+    <h1 data-h>Sua lavoura não pode <span>esperar.</span></h1>
+    <p class="lead" data-h>Janela de aplicação curta, terreno difícil e operação atrasada? Levamos tecnologia aérea e planejamento ao campo para ajudar sua lavoura a avançar no momento certo.</p>
+    <div class="hero-actions" data-h>
+      <a href="#orcamento" class="btn btn-primary">Solicitar orçamento <svg><use href="#i-arrow"/></svg></a>
+      <a href="#servicos" class="btn btn-line">Conhecer soluções</a>
     </div>
   </div>
-  <div class="wrap hero-stats" data-hero>
-    <div><strong class="count" data-target="15000">15.000+</strong><span>hectares<br>atendidos</span></div>
-    <div><strong>03</strong><span>estados<br>PA · TO · MA</span></div>
-    <div><strong>03</strong><span>soluções<br>aéreas</span></div>
-    <div class="scroll-cue"><span>Role para<br>explorar</span><i></i></div>
+  <div class="wrap facts" data-h>
+    <div class="fact"><strong class="count" data-target="15000">15.000+</strong><span>hectares<br>atendidos</span></div>
+    <div class="fact"><strong>3 estados</strong><span>Pará, Tocantins<br>e Maranhão</span></div>
+    <div class="fact"><strong>3 soluções</strong><span>Pulverização, dispersão<br>e mapeamento</span></div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <div class="marquee-group">
-      <span>Precisão agrícola</span><svg><use href="#i-star"/></svg>
-      <span class="o">Tecnologia aérea</span><svg><use href="#i-star"/></svg>
-      <span class="s">Pará · Tocantins · Maranhão</span><svg><use href="#i-star"/></svg>
-      <span>Pulverização</span><svg><use href="#i-star"/></svg>
-      <span class="o">Dispersão</span><svg><use href="#i-star"/></svg>
-      <span class="s">Georreferenciamento</span><svg><use href="#i-star"/></svg>
+<section class="section" id="sobre">
+  <div class="wrap about-grid">
+    <div data-a>
+      <div class="eyebrow">Quem somos</div>
+      <h2 class="h2">Quem conhece o campo entende a urgência.</h2>
     </div>
-    <div class="marquee-group">
-      <span>Precisão agrícola</span><svg><use href="#i-star"/></svg>
-      <span class="o">Tecnologia aérea</span><svg><use href="#i-star"/></svg>
-      <span class="s">Pará · Tocantins · Maranhão</span><svg><use href="#i-star"/></svg>
-      <span>Pulverização</span><svg><use href="#i-star"/></svg>
-      <span class="o">Dispersão</span><svg><use href="#i-star"/></svg>
-      <span class="s">Georreferenciamento</span><svg><use href="#i-star"/></svg>
-    </div>
-  </div>
-</div>
-
-<!-- TECHNOLOGY: zoom + storytelling -->
-<section class="tech" id="tecnologia">
-  <div class="zoom">
-    <div class="zoom-sticky">
-      <div class="zoom-head">
-        <div class="eyebrow">A tecnologia por trás da operação</div>
-        <h2 class="h2"><span class="line"><span data-line>Precisão que</span></span><span class="line"><span data-line><em>começa no ar.</em></span></span></h2>
-      </div>
-      <figure class="zoom-media">
-        <img src="https://www-cdn.djiits.com/cms/uploads/8cd2af4d921671017ec6b7078499add2.jpg" alt="Drone agrícola em operação de pulverização sobre lavoura" loading="lazy" decoding="async">
-        <figcaption class="zoom-cap">
-          <span class="eyebrow">Operação aérea</span>
-          <p>Acesso à lavoura <em>sem tráfego de máquinas</em> sobre a cultura — mesmo com solo encharcado, terreno difícil ou janela de aplicação curta.</p>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <div class="wrap story">
-    <div class="story-visual" aria-hidden="true">
-      <div class="plan-card">
-        <div class="plan-top"><span>PLANO DE OPERAÇÃO</span><span class="plan-status" data-status>01 · LIMITES DA ÁREA</span></div>
-        <svg class="plan" viewBox="0 0 600 600">
-          <defs>
-            <pattern id="pgrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="rgba(13,20,14,.07)"/></pattern>
-            <clipPath id="fieldclip"><path id="fieldshape" d=""/></clipPath>
-          </defs>
-          <rect width="600" height="600" fill="url(#pgrid)"/>
-          <g id="cells" clip-path="url(#fieldclip)"></g>
-          <path id="field" d="" fill="rgba(133,196,64,.07)" stroke="#2f5216" stroke-width="2"/>
-          <path id="route" d="" fill="none" stroke="#4e7f22" stroke-width="1.6" stroke-linejoin="round"/>
-          <g id="vertices"></g>
-          <g id="drone-dot"><circle r="16" fill="rgba(133,196,64,.18)"/><circle r="6" fill="#0d140e"/><circle r="2.5" fill="#a9d96c"/></g>
-          <g font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="1.5" fill="rgba(13,20,14,.45)"><text x="16" y="24">N ↑</text><text x="584" y="590" text-anchor="end">ESCALA ILUSTRATIVA</text></g>
-        </svg>
-        <div class="plan-legend"><span data-leg="0">LIMITES</span><span data-leg="1">ROTA DE VOO</span><span data-leg="2">LEITURA DO TERRENO</span></div>
-      </div>
-    </div>
-    <div class="story-steps">
-      <article class="step is-active" data-step="0">
-        <span class="idx">01 / PLANEJAMENTO</span>
-        <h3>Planejamento antes de decolar.</h3>
-        <p>Alinhamento de área, tipo de serviço, condições operacionais e necessidades de cada propriedade antes da execução.</p>
-      </article>
-      <article class="step" data-step="1">
-        <span class="idx">02 / OPERAÇÃO AÉREA</span>
-        <h3>Execução no momento certo.</h3>
-        <p>Pulverização e dispersão aérea planejadas para alcançar a área sem depender do tráfego de máquinas sobre a cultura, com atenção à dose e à cobertura.</p>
-      </article>
-      <article class="step" data-step="2">
-        <span class="idx">03 / LEITURA DO TERRENO</span>
-        <h3>Uma visão clara da área.</h3>
-        <p>Georreferenciamento e mapeamento aéreo apoiam a identificação de limites, o planejamento de operações e a leitura do terreno.</p>
-      </article>
+    <div data-a>
+      <p class="lead">Na agricultura, perder o momento certo custa caro. Por isso, unimos experiência operacional, planejamento e tecnologia com drones para enfrentar desafios reais de quem produz.</p>
+      <ul class="checks">
+        <li><svg><use href="#i-check"/></svg>Planejamento para cada operação</li>
+        <li><svg><use href="#i-check"/></svg>Precisão e eficiência operacional</li>
+        <li><svg><use href="#i-check"/></svg>Tecnologia aplicada ao agronegócio</li>
+        <li><svg><use href="#i-check"/></svg>Atendimento direto e profissional</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services section" id="servicos">
-  <div class="svc-pin">
-    <div class="svc-track">
-      <div class="svc-intro">
-        <div class="eyebrow">Nossas especialidades</div>
-        <h2 class="h2"><span class="line"><span data-line>Seu desafio.</span></span><span class="line"><span data-line><em>Nossa</em> operação.</span></span></h2>
-        <p class="lede" data-reveal>Cada operação tem um obstáculo. Nossa missão é encontrar o caminho mais eficiente para executar o serviço com precisão.</p>
-        <div class="hint" data-reveal><i></i>DESAFIO NO CAMPO → SOLUÇÃO AÉREA</div>
-      </div>
-
-      <article class="svc">
-        <div class="svc-media">
-          <img src="https://www-cdn.djiits.com/cms/uploads/8cd2af4d921671017ec6b7078499add2.jpg" alt="Drone agrícola realizando pulverização sobre lavoura" loading="lazy" decoding="async">
-          <div class="svc-tag"><i></i>PULVERIZAÇÃO</div>
-          <div class="svc-num">01</div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v12m0 14v12M5 24h12m14 0h12M11 11l9 9m8 8 9 9M37 11l-9 9m-8 8-9 9"/><circle cx="24" cy="24" r="7"/></svg></div>
-          <h3>Pulverização <em>agrícola</em></h3>
-          <dl class="pain">
-            <dt>Desafio</dt><dd>Janela climática apertada, solo encharcado ou risco de amassamento?</dd>
-            <dt class="s">Solução</dt><dd>Planejamos a pulverização aérea para alcançar a área sem depender do tráfego de máquinas sobre a cultura.</dd>
-          </dl>
-          <div class="svc-foot"><span>01 / 03</span><a href="#orcamento">SOLICITAR <svg><use href="#i-arrow"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-media">
-          <img src="https://miro.medium.com/v2/resize:fit:1200/0*eYV3PY8u9ntcCY3D.jpg" alt="Drone com equipamento de dispersão de sementes e sólidos" loading="lazy" decoding="async">
-          <div class="svc-tag"><i></i>DISPERSÃO</div>
-          <div class="svc-num">02</div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v18m-12-9 12 9 12-9M7 32l17-9 17 9M12 38l12-10 12 10"/><circle cx="24" cy="41" r="2"/></svg></div>
-          <h3>Dispersão de sólidos <em>e sementes</em></h3>
-          <dl class="pain">
-            <dt>Desafio</dt><dd>Dificuldade de acesso, distribuição irregular ou tempo perdido na semeadura?</dd>
-            <dt class="s">Solução</dt><dd>Executamos dispersão aérea de sementes e sólidos compatíveis, com planejamento de dose e cobertura.</dd>
-          </dl>
-          <div class="svc-foot"><span>02 / 03</span><a href="#orcamento">SOLICITAR <svg><use href="#i-arrow"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="svc">
-        <div class="svc-media">
-          <img src="https://boxallsurveyors.com.au/adm/thumb2.aspx?src=%2Fuserfiles%2FImages%2FMapping_Drone.jpg&wid=1200" alt="Drone de mapeamento sobre área agrícola" loading="lazy" decoding="async">
-          <div class="svc-tag"><i></i>GEORREFERENCIAMENTO · MAPEAMENTO</div>
-          <div class="svc-num">03</div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m5 12 12-6 14 6 12-6v30l-12 6-14-6-12 6zM17 6v30m14-24v30"/><path d="m21 22 4-4 4 4-4 6z"/></svg></div>
-          <h3>Georreferenciamento <em>e mapeamento</em></h3>
-          <dl class="pain">
-            <dt>Desafio</dt><dd>Sem uma visão clara da área, decisões ficam mais difíceis.</dd>
-            <dt class="s">Solução</dt><dd>O mapeamento aéreo apoia a identificação de limites, o planejamento de operações e a leitura do terreno.</dd>
-          </dl>
-          <div class="svc-foot"><span>03 / 03</span><a href="#orcamento">SOLICITAR <svg><use href="#i-arrow"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-    <div class="svc-progress" aria-hidden="true"><span class="cur">01</span><div class="bar"><i></i></div><span>03</span></div>
-  </div>
-</section>
-
-<!-- MANIFESTO / ABOUT -->
-<section class="manifesto section" id="sobre">
-  <div class="orb" data-speed="-0.2"></div>
-  <div class="wrap">
-    <div class="mani-grid">
-      <div class="mani-side"><div class="sticky">
-        <div class="eyebrow">Quem somos</div>
-        <p class="idx" style="margin-top:22px">LIBER DRONES — AGRICULTURA DE PRECISÃO</p>
-      </div></div>
-      <div>
-        <h2 class="h2" style="margin:0 0 44px"><span class="line"><span data-line>Quem conhece o campo</span></span><span class="line"><span data-line><em>entende a urgência.</em></span></span></h2>
-        <p class="mani-text" data-words>Na agricultura, perder o momento certo custa caro. Por isso, unimos experiência operacional, planejamento e tecnologia com drones para enfrentar desafios reais de quem produz.</p>
-        <div class="mani-cta" data-reveal><a href="#orcamento" class="btn magnetic"><span class="roll"><span data-t="Converse com nossa equipe">Converse com nossa equipe</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
-      </div>
-    </div>
-    <div class="benefits">
-      <div class="benefit" data-stagger><span class="idx">01</span><strong>Planejamento para cada operação</strong></div>
-      <div class="benefit" data-stagger><span class="idx">02</span><strong>Precisão e eficiência operacional</strong></div>
-      <div class="benefit" data-stagger><span class="idx">03</span><strong>Tecnologia aplicada ao agronegócio</strong></div>
-      <div class="benefit" data-stagger><span class="idx">04</span><strong>Atendimento direto e profissional</strong></div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT / MAP -->
-<section class="impact section" id="atuacao">
+<section class="section services" id="servicos">
   <div class="wrap">
     <div class="sec-head">
-      <div>
-        <div class="eyebrow">Presença no agronegócio brasileiro</div>
-        <h2 class="h2"><span class="line"><span data-line>Experiência que</span></span><span class="line"><span data-line><em>cobre territórios.</em></span></span></h2>
+      <div data-a>
+        <div class="eyebrow">Serviços</div>
+        <h2 class="h2">Seu desafio.<br>Nossa operação.</h2>
       </div>
-      <p class="lede" data-reveal>Atuação em operações agrícolas no Norte e Nordeste do Brasil. Uma trajetória construída no campo, hectare após hectare.</p>
+      <p class="lead" data-a>Cada operação tem um obstáculo. Nossa missão é encontrar o caminho mais eficiente para executar o serviço com precisão.</p>
     </div>
-    <div class="impact-layout">
-      <div class="impact-card" data-reveal>
-        <div>
-          <div class="impact-number"><span class="count" data-target="15000">15.000+</span></div>
-          <div class="impact-label">Hectares atendidos</div>
+    <div class="cards">
+      <article class="card" data-card>
+        <div class="card-media"><img src="/assets/dji-800.webp" alt="Drone agrícola realizando pulverização sobre lavoura" width="800" height="533" loading="lazy" decoding="async"><span class="card-num">01</span></div>
+        <div class="card-body">
+          <h3>Pulverização agrícola</h3>
+          <dl><div><dt>Desafio</dt><dd>Janela climática apertada, solo encharcado ou risco de amassamento.</dd></div><div><dt class="sol">Solução</dt><dd>Pulverização aérea planejada para alcançar a área sem depender do tráfego de máquinas sobre a cultura.</dd></div></dl>
+          <a class="link" href="#orcamento" data-service="Pulverização agrícola">Solicitar este serviço <svg><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="states">
-          <div class="state"><span>Pará</span><b>PA / BR</b></div>
-          <div class="state"><span>Tocantins</span><b>TO / BR</b></div>
-          <div class="state"><span>Maranhão</span><b>MA / BR</b></div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-media"><img src="/assets/disp-800.webp" alt="Drone com equipamento de dispersão de sementes e sólidos" width="800" height="800" loading="lazy" decoding="async"><span class="card-num">02</span></div>
+        <div class="card-body">
+          <h3>Dispersão de sólidos e sementes</h3>
+          <dl><div><dt>Desafio</dt><dd>Dificuldade de acesso, distribuição irregular ou tempo perdido na semeadura.</dd></div><div><dt class="sol">Solução</dt><dd>Dispersão aérea de sementes e sólidos compatíveis, com planejamento de dose e cobertura.</dd></div></dl>
+          <a class="link" href="#orcamento" data-service="Dispersão de sólidos e sementes">Solicitar este serviço <svg><use href="#i-arrow"/></svg></a>
         </div>
-      </div>
-      <div class="map-shell" data-reveal aria-label="Mapa tridimensional da área de atuação no Pará, Tocantins e Maranhão">
-        <div class="map-grid"></div>
-        <div class="map-radar" aria-hidden="true"></div>
-        <div id="agro-map"><div class="map-fallback">PARÁ · TOCANTINS · MARANHÃO<br>Área de atuação no Brasil</div></div>
-        <div class="map-label tl">MAPA DE ATUAÇÃO / 3D</div>
-        <div class="map-label tr"><strong>03</strong> ESTADOS</div>
-        <div class="map-label bl">VISUALIZAÇÃO GEOGRÁFICA • NÃO REPRESENTA TALHÕES ATENDIDOS</div>
-      </div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-media"><img src="/assets/map-800.webp" srcset="/assets/map-800.webp 800w, /assets/map-1200.webp 1200w" sizes="(max-width:1060px) 100vw, 400px" alt="Drone de mapeamento sobre área agrícola" width="800" height="444" loading="lazy" decoding="async"><span class="card-num">03</span></div>
+        <div class="card-body">
+          <h3>Georreferenciamento e mapeamento</h3>
+          <dl><div><dt>Desafio</dt><dd>Sem uma visão clara da área, as decisões ficam mais difíceis.</dd></div><div><dt class="sol">Solução</dt><dd>Mapeamento aéreo para apoiar a identificação de limites, o planejamento de operações e a leitura do terreno.</dd></div></dl>
+          <a class="link" href="#orcamento" data-service="Georreferenciamento e mapeamento">Solicitar este serviço <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ENTERPRISE -->
-<section class="enterprise section" id="empresas">
+<section class="section" id="como-atuamos">
   <div class="wrap">
     <div class="sec-head">
-      <div>
-        <div class="eyebrow">Operações e parcerias corporativas</div>
-        <h2 class="h2"><span class="line"><span data-line>Capacidade de campo.</span></span><span class="line"><span data-line><em>Visão de negócio.</em></span></span></h2>
+      <div data-a>
+        <div class="eyebrow">Como atuamos</div>
+        <h2 class="h2">Da avaliação da área à execução no campo.</h2>
       </div>
-      <p class="lede" data-reveal>Para empresas do agronegócio, fazendas e prestadores que precisam de um parceiro comprometido com planejamento, comunicação e execução responsável.</p>
+      <p class="lead" data-a>Cada serviço começa pelo entendimento da demanda e segue com uma operação planejada e executada de forma responsável.</p>
     </div>
-    <div class="ent-list">
-      <article class="ent" data-stagger>
-        <span class="ent-i">01 / OPERAÇÃO</span>
-        <h3>Planejamento antes de decolar.</h3>
+    <div class="steps">
+      <div class="steps-line" aria-hidden="true"><i></i></div>
+      <div class="step" data-step><div class="step-n">01</div><h3>Planejamento</h3><p>Alinhamento de área, tipo de serviço, condições operacionais e necessidades de cada propriedade antes da execução.</p></div>
+      <div class="step" data-step><div class="step-n">02</div><h3>Operação aérea</h3><p>Execução com drones no momento certo, alcançando a área sem depender do tráfego de máquinas sobre a cultura.</p></div>
+      <div class="step" data-step><div class="step-n">03</div><h3>Comunicação direta</h3><p>Atendimento próximo de quem decide, para avaliar demandas, disponibilidade operacional e propostas de acordo com o escopo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section presence" id="atuacao">
+  <div class="wrap pres-grid">
+    <div class="pres-info">
+      <div data-a>
+        <div class="eyebrow">Área de atuação</div>
+        <h2 class="h2">Experiência que cobre territórios.</h2>
+        <p class="lead">Atuação em operações agrícolas no Norte e Nordeste do Brasil. Uma trajetória construída no campo, hectare após hectare.</p>
+      </div>
+      <div class="big" data-a><strong class="count" data-target="15000">15.000+</strong><span>hectares atendidos em operações agrícolas</span></div>
+      <div class="state-list" data-a>
+        <button class="state-btn" type="button" data-uf="PA">Pará <b>PA</b></button>
+        <button class="state-btn" type="button" data-uf="TO">Tocantins <b>TO</b></button>
+        <button class="state-btn" type="button" data-uf="MA">Maranhão <b>MA</b></button>
+      </div>
+    </div>
+    <div class="map-card" data-a role="img" aria-label="Mapa do Brasil com destaque para os estados do Pará, Tocantins e Maranhão, área de atuação da LIBER DRONES">
+      <div id="map"></div>
+      <div class="map-fallback" id="map-fallback"></div>
+      <div class="map-head"><span>Mapa de atuação</span><span class="map-legend"><span><i></i>Atuação</span><span><i class="o"></i>Demais estados</span></span></div>
+      <p class="map-note">Visualização geográfica dos estados atendidos. Não representa talhões atendidos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="empresas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-a>
+        <div class="eyebrow">Empresas e parcerias</div>
+        <h2 class="h2">Capacidade de campo. Visão de negócio.</h2>
+      </div>
+      <p class="lead" data-a>Para empresas do agronegócio, fazendas e prestadores que precisam de um parceiro comprometido com planejamento, comunicação e execução responsável.</p>
+    </div>
+    <div class="ent-grid">
+      <article class="ent" data-card>
+        <div class="ent-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4zM9 4v13.5M15 6.5V20"/></svg></div>
+        <small>01 · Operação</small><h3>Planejamento antes de decolar.</h3>
         <p>Alinhamento de área, tipo de serviço, condições operacionais e necessidades de cada propriedade antes da execução.</p>
-        <span class="arr"><svg><use href="#i-arrow"/></svg></span>
       </article>
-      <article class="ent" data-stagger>
-        <span class="ent-i">02 / PRESENÇA</span>
-        <h3>Experiência em três estados.</h3>
+      <article class="ent" data-card>
+        <div class="ent-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <small>02 · Presença</small><h3>Experiência em três estados.</h3>
         <p>Histórico de atuação no Pará, Tocantins e Maranhão, com mais de 15 mil hectares atendidos em operações agrícolas.</p>
-        <span class="arr"><svg><use href="#i-arrow"/></svg></span>
       </article>
-      <article class="ent" data-stagger>
-        <span class="ent-i">03 / RELACIONAMENTO</span>
-        <h3>Comunicação direta com quem decide.</h3>
+      <article class="ent" data-card>
+        <div class="ent-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></div>
+        <small>03 · Relacionamento</small><h3>Comunicação direta com quem decide.</h3>
         <p>Atendimento para avaliar demandas, disponibilidade operacional e propostas comerciais de acordo com o escopo solicitado.</p>
-        <span class="arr"><svg><use href="#i-arrow"/></svg></span>
       </article>
     </div>
-    <div class="ent-foot" data-reveal>
-      <p><strong>Busca uma parceria operacional?</strong><br>Apresente sua demanda e converse diretamente sobre a viabilidade do atendimento.</p>
-      <a class="btn dark magnetic" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20sou%20representante%20de%20uma%20empresa%20e%20gostaria%20de%20conversar%20sobre%20uma%20parceria%20ou%20contrato%20com%20a%20LIBER%20DRONES." target="_blank" rel="noopener noreferrer"><span class="roll"><span data-t="Solicitar contato comercial">Solicitar contato comercial</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+    <div class="band" data-a>
+      <p><strong>Busca uma parceria operacional?</strong>Apresente sua demanda e converse diretamente sobre a viabilidade do atendimento.</p>
+      <a class="btn btn-dark" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20sou%20representante%20de%20uma%20empresa%20e%20gostaria%20de%20conversar%20sobre%20uma%20parceria%20ou%20contrato%20com%20a%20LIBER%20DRONES." target="_blank" rel="noopener noreferrer">Solicitar contato comercial <svg><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="projects section" id="projetos">
-  <div class="wrap">
-    <div class="sec-head" style="color:var(--paper-ink)">
-      <div>
-        <div class="eyebrow" style="color:var(--lime-deep)">Ecossistema de tecnologia</div>
-        <h2 class="h2"><span class="line"><span data-line>Tecnologia para</span></span><span class="line"><span data-line><em style="color:var(--lime-deep)">quem move o campo.</em></span></span></h2>
-      </div>
-      <p class="lede" style="color:#4d584e" data-reveal>Nossa atuação também envolve ferramentas digitais para apoiar profissionais que movimentam o agronegócio.</p>
+<section class="section agro" id="projetos">
+  <div class="wrap agro-grid">
+    <div data-a>
+      <div class="eyebrow">Ecossistema LIBER</div>
+      <div class="agro-mark">LIBER <span>AGRO</span></div>
+      <h3>O campo na palma da mão.</h3>
+      <p class="lead">Uma plataforma desenvolvida para pilotos de drones e prestadores de serviços agrícolas organizarem suas operações com mais praticidade, inclusive em rotinas de campo com conexão limitada.</p>
+      <ul class="feat">
+        <li><svg><use href="#i-check"/></svg>Orçamentos</li>
+        <li><svg><use href="#i-check"/></svg>Serviços realizados</li>
+        <li><svg><use href="#i-check"/></svg>Gestão financeira</li>
+        <li><svg><use href="#i-check"/></svg>Rotina no campo</li>
+      </ul>
+      <a class="btn btn-dark" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20aplicativo%20LIBER%20AGRO." target="_blank" rel="noopener noreferrer">Saiba mais sobre o LIBER AGRO <svg><use href="#i-arrow"/></svg></a>
     </div>
-    <article class="proj" data-reveal>
-      <div class="proj-glow"></div>
-      <div class="proj-content">
-        <div class="eyebrow">Projeto em destaque · Aplicativo</div>
-        <div class="proj-word">LIBER <span>Agro</span></div>
-        <h3>O campo na palma da mão.</h3>
-        <p>Uma plataforma desenvolvida para <strong>pilotos de drones e prestadores de serviços agrícolas</strong> organizarem suas operações com mais praticidade, inclusive em rotinas de campo com conexão limitada.</p>
-        <div class="tags"><span>ORÇAMENTOS</span><span>SERVIÇOS REALIZADOS</span><span>GESTÃO FINANCEIRA</span><span>ROTINA NO CAMPO</span></div>
-        <div><a class="btn magnetic" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20aplicativo%20LIBER%20AGRO." target="_blank" rel="noopener noreferrer"><span class="roll"><span data-t="Saiba mais sobre o LIBER AGRO">Saiba mais sobre o LIBER AGRO</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
-      </div>
-      <div class="proj-visual" aria-label="Ilustração conceitual do aplicativo LIBER AGRO">
-        <div class="orbit o2"><i></i></div>
-        <div class="orbit o1"><i></i></div>
-        <div class="float-chip c1"><b>ORÇAMENTOS</b>Planeje cada serviço</div>
-        <div class="float-chip c2"><b>OFFLINE</b>Rotina no campo</div>
-        <div class="phone" id="phone">
-          <div class="phone-screen">
-            <div class="ph-bar"><b>LIBER AGRO</b><span>● ● ●</span></div>
-            <div class="ph-bar" style="margin-top:12px"><span>GESTÃO DE OPERAÇÕES</span></div>
-            <div class="ph-title">Seu campo.<br><em>Em um só lugar.</em></div>
-            <div class="ph-card"><span>ORÇAMENTOS</span><strong>Planeje cada serviço</strong><i style="--w:72%"></i></div>
-            <div class="ph-card"><span>OPERAÇÕES</span><strong>Registre seu trabalho</strong><i style="--w:54%"></i></div>
-            <div class="ph-card"><span>FINANCEIRO</span><strong>Organize seus resultados</strong><i style="--w:86%"></i></div>
-            <div class="ph-foot">UMA SOLUÇÃO LIBER</div>
-          </div>
+    <div class="agro-visual" data-a aria-label="Ilustração conceitual do aplicativo LIBER AGRO">
+      <div class="phone" id="phone">
+        <div class="screen">
+          <div class="sc-top">LIBER AGRO <span>●</span></div>
+          <div class="sc-title">Seu campo.<br>Em um só lugar.</div>
+          <div class="sc-card"><small>ORÇAMENTOS</small><strong>Planeje cada serviço</strong><i style="--w:72%"></i></div>
+          <div class="sc-card"><small>OPERAÇÕES</small><strong>Registre seu trabalho</strong><i style="--w:54%"></i></div>
+          <div class="sc-card"><small>FINANCEIRO</small><strong>Organize seus resultados</strong><i style="--w:86%"></i></div>
+          <div class="sc-foot">UMA SOLUÇÃO LIBER</div>
         </div>
-        <div class="proj-note">REPRESENTAÇÃO CONCEITUAL DA INTERFACE</div>
       </div>
-    </article>
+      <p class="agro-note">Representação conceitual da interface</p>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta" id="contato">
-  <div class="cta-glow"></div>
-  <div class="cta-rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="wrap">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="wrap" data-a>
     <div class="eyebrow">Vamos elevar sua operação</div>
-    <h2><span class="line"><span data-line>O problema está no campo.</span></span><span class="line"><span data-line><em>A solução começa aqui.</em></span></span></h2>
-    <p data-reveal>Atraso na aplicação? Área de difícil acesso? Precisa semear, distribuir ou mapear? Conte seu desafio. Nós avaliamos a melhor solução para sua operação.</p>
-    <div data-reveal><a class="btn magnetic" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20LIBER%20DRONES%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer"><span class="roll"><span data-t="Falar no WhatsApp">Falar no WhatsApp</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+    <h2>O problema está no campo. A solução começa aqui.</h2>
+    <p>Atraso na aplicação? Área de difícil acesso? Precisa semear, distribuir ou mapear? Conte seu desafio. Nós avaliamos a melhor solução para sua operação.</p>
+    <a class="btn btn-primary" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20LIBER%20DRONES%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <svg><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
-<!-- FORM -->
-<section class="contact section" id="orcamento">
+<section class="section" id="orcamento">
   <div class="wrap contact-grid">
-    <div class="contact-aside">
+    <div data-a>
       <div class="eyebrow">Atendimento comercial</div>
-      <h2 class="h2"><span class="line"><span data-line>Vamos</span></span><span class="line"><span data-line><em>conversar.</em></span></span></h2>
-      <p class="lede" data-reveal>Preencha os dados para preparar sua solicitação. Você será direcionado ao WhatsApp com a mensagem pronta.</p>
-      <div class="contact-list" data-reveal>
-        <a href="https://wa.me/5598981480329" target="_blank" rel="noopener noreferrer"><span>WHATSAPP</span>+55 98 98148-0329</a>
-        <div><span>ATUAÇÃO</span>Pará · Tocantins · Maranhão</div>
+      <h2 class="h2">Vamos conversar.</h2>
+      <p class="lead">Preencha os dados para preparar sua solicitação. Você será direcionado ao WhatsApp com a mensagem pronta.</p>
+      <div class="c-list">
+        <a class="c-row" href="https://wa.me/5598981480329" target="_blank" rel="noopener noreferrer"><span class="c-ic"><svg viewBox="0 0 32 32" fill="currentColor"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><strong>+55 98 98148-0329</strong></span></a>
+        <div><span class="c-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Atuação</small><strong>Pará · Tocantins · Maranhão</strong></span></div>
       </div>
     </div>
-    <form id="quote" class="form" data-reveal>
-      <div class="form-head"><span>SOLICITAÇÃO DE ORÇAMENTO</span><b>● RESPOSTA VIA WHATSAPP</b></div>
-      <label class="field"><span class="lbl">SEU NOME</span><input name="nome" required placeholder="Nome completo" autocomplete="name"></label>
-      <label class="field"><span class="lbl">WHATSAPP</span><input name="telefone" required type="tel" placeholder="(00) 00000-0000" autocomplete="tel"></label>
-      <label class="field full"><span class="lbl">TIPO DE SERVIÇO</span><select name="servico" required><option value="">Selecione o serviço</option><option>Pulverização agrícola</option><option>Dispersão de sólidos e sementes</option><option>Georreferenciamento e mapeamento</option></select></label>
-      <label class="field"><span class="lbl">CIDADE / ESTADO</span><input name="local" required placeholder="Ex.: Araguatins / TO"></label>
-      <label class="field"><span class="lbl">ÁREA ESTIMADA (HA)</span><input name="area" type="number" min="0" step="0.01" placeholder="Ex.: 150"></label>
-      <label class="field full"><span class="lbl">DETALHES DA OPERAÇÃO</span><textarea name="detalhes" placeholder="Descreva sua necessidade"></textarea></label>
-      <button type="submit" class="btn magnetic"><span class="roll"><span data-t="Enviar pelo WhatsApp">Enviar pelo WhatsApp</span></span><span class="ic"><svg><use href="#i-arrow"/></svg></span></button>
+    <form id="quote" class="form" data-a>
+      <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" required placeholder="Nome completo" autocomplete="name"></div>
+      <div class="field"><label for="f-tel">WhatsApp</label><input id="f-tel" name="telefone" required type="tel" placeholder="(00) 00000-0000" autocomplete="tel"></div>
+      <div class="field full"><label for="f-serv">Tipo de serviço</label><select id="f-serv" name="servico" required><option value="">Selecione o serviço</option><option>Pulverização agrícola</option><option>Dispersão de sólidos e sementes</option><option>Georreferenciamento e mapeamento</option></select></div>
+      <div class="field"><label for="f-local">Cidade / Estado</label><input id="f-local" name="local" required placeholder="Ex.: Araguatins / TO"></div>
+      <div class="field"><label for="f-area">Área estimada (ha)</label><input id="f-area" name="area" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex.: 150"></div>
+      <div class="field full"><label for="f-det">Detalhes da operação</label><textarea id="f-det" name="detalhes" placeholder="Descreva sua necessidade"></textarea></div>
+      <button type="submit" class="btn btn-primary">Enviar pelo WhatsApp <svg><use href="#i-arrow"/></svg></button>
       <p class="fine">O formulário não armazena dados. Sua mensagem é preparada e enviada somente quando você confirmar no WhatsApp.</p>
     </form>
   </div>
@@ -958,361 +589,221 @@ footer{position:relative;background:var(--bg);border-top:1px solid var(--line);p
 
 <footer>
   <div class="wrap">
-    <div class="foot-top">
+    <div class="f-grid">
       <div>
-        <a class="logo" href="#inicio" style="margin-bottom:28px"><img src="/liber-drones-logo.webp" alt="LIBER DRONES" width="1200" height="82" loading="lazy" decoding="async"></a>
-        <p class="foot-claim">Tecnologia e precisão <em>para o campo.</em></p>
+        <a class="logo" href="#inicio"><img src="/liber-drones-logo.webp" alt="LIBER DRONES" width="1200" height="82" loading="lazy" decoding="async"></a>
+        <p class="claim">Tecnologia e precisão para o campo. Serviços agrícolas com drones no Pará, Tocantins e Maranhão.</p>
       </div>
       <div>
-        <h4>NAVEGAÇÃO</h4>
-        <a href="#tecnologia">Tecnologia</a><a href="#servicos">Serviços</a><a href="#sobre">Quem somos</a><a href="#atuacao">Atuação</a><a href="#empresas">Operações</a><a href="#projetos">LIBER AGRO</a><a href="#orcamento">Orçamento</a>
+        <h4>Navegação</h4>
+        <a href="#servicos">Serviços</a><a href="#como-atuamos">Como atuamos</a><a href="#atuacao">Atuação</a><a href="#empresas">Empresas</a><a href="#projetos">LIBER AGRO</a>
       </div>
       <div>
-        <h4>CONTATO</h4>
+        <h4>Contato</h4>
         <a href="https://wa.me/5598981480329" target="_blank" rel="noopener noreferrer">WhatsApp +55 98 98148-0329</a>
-        <p>Pará · Tocantins · Maranhão</p>
-        <p>CNPJ 49.176.315/0001-83</p>
+        <span class="t">Pará · Tocantins · Maranhão</span>
+        <span class="t">CNPJ 49.176.315/0001-83</span>
       </div>
     </div>
-    <div class="giant" aria-hidden="true" data-giant>LIBER <span>drones</span></div>
-    <div class="foot-bottom"><span>© 2026 LIBER DRONES · TODOS OS DIREITOS RESERVADOS</span><span>CNPJ 49.176.315/0001-83</span></div>
+    <div class="f-bottom"><span>© 2026 LIBER DRONES. Todos os direitos reservados.</span><span>CNPJ 49.176.315/0001-83</span></div>
   </div>
 </footer>
 
-<a class="floating" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20LIBER%20DRONES%21%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .5A15.4 15.4 0 0 0 2.7 23.7L.5 31.5l8-2.1A15.5 15.5 0 1 0 16 .5zm0 28.2c-2.4 0-4.8-.7-6.8-2l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.7 12.7 0 1 1 16 28.7zm7-9.5c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.7-.2-.9.2s-1 1.2-1.2 1.4c-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.2.7-.1 2.3-1 2.6-2 .3-1 .3-1.9.2-2.1-.1-.2-.3-.3-.7-.5z"/></svg></a>
+<a class="wa" href="https://wa.me/5598981480329?text=Ol%C3%A1%2C%20LIBER%20DRONES%21%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32"><use href="#i-wa"/></svg></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
 <script>
 (() => {
-  const html = document.documentElement;
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const html = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-  /* ---- quote form → WhatsApp ---- */
-  $('#quote').addEventListener('submit', e => {
+  /* form → WhatsApp */
+  const form = $('#quote');
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
-    const message = ['Olá, LIBER DRONES! Gostaria de solicitar um orçamento.', '', 'Nome: ' + f.get('nome'), 'WhatsApp: ' + f.get('telefone'), 'Serviço: ' + f.get('servico'), 'Localização: ' + f.get('local'), 'Área: ' + (f.get('area') || 'Não informada') + ' ha', 'Detalhes: ' + (f.get('detalhes') || 'Não informados')].join('\n');
-    window.open('https://wa.me/5598981480329?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+    const f = new FormData(form);
+    const msg = ['Olá, LIBER DRONES! Gostaria de solicitar um orçamento.', '', 'Nome: ' + f.get('nome'), 'WhatsApp: ' + f.get('telefone'), 'Serviço: ' + f.get('servico'), 'Localização: ' + f.get('local'), 'Área: ' + (f.get('area') || 'Não informada') + ' ha', 'Detalhes: ' + (f.get('detalhes') || 'Não informados')].join('\n');
+    window.open('https://wa.me/5598981480329?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
   });
+  $$('[data-service]').forEach(a => a.addEventListener('click', () => { $('#f-serv').value = a.dataset.service; }));
 
-  /* ---- counters ---- */
-  const fmt = new Intl.NumberFormat('pt-BR');
-  const playCount = el => {
-    if (el.dataset.played) return; el.dataset.played = 1;
-    const target = +el.dataset.target;
-    if (reduced) { el.textContent = fmt.format(target) + '+'; return; }
-    const d = 2200, t0 = performance.now();
-    const step = now => { const t = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - t, 4); el.textContent = fmt.format(Math.round(target * e)) + '+'; if (t < 1) requestAnimationFrame(step); };
+  /* counters */
+  const nf = new Intl.NumberFormat('pt-BR');
+  const count = el => {
+    if (el.dataset.done) return; el.dataset.done = 1;
+    if (reduced) return;
+    const target = +el.dataset.target, t0 = performance.now(), d = 2000;
+    const step = now => { const t = Math.min(1, (now - t0) / d); el.textContent = nf.format(Math.round(target * (1 - Math.pow(1 - t, 3)))) + '+'; if (t < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   };
-  const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { playCount(e.target); cio.unobserve(e.target); } }), { threshold: .4 });
+  const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { count(e.target); cio.unobserve(e.target); } }), { threshold: .5 });
   $$('.count').forEach(el => cio.observe(el));
 
-  /* ---- header / progress ---- */
-  const header = $('#header'), progress = $('#progress');
-  let lastY = 0;
-  const onScroll = y => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-    header.classList.toggle('scrolled', y > 40);
-    if (!html.classList.contains('menu-open')) header.classList.toggle('hide', y > 500 && y > lastY + 2);
-    if (y < lastY - 2) header.classList.remove('hide');
-    lastY = y;
-  };
-  addEventListener('scroll', () => onScroll(scrollY), { passive: true });
-  onScroll(scrollY);
-
-  /* active nav link */
-  const links = $$('.menu a');
+  /* header */
+  const hdr = $('#hdr');
+  const onScroll = y => hdr.classList.toggle('solid', y > 40 || html.classList.contains('menu-open'));
+  addEventListener('scroll', () => onScroll(scrollY), { passive: true }); onScroll(scrollY);
+  const links = $$('.nav a');
   const sio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
   $$('main section[id]').forEach(s => sio.observe(s));
 
-  /* ---- mobile menu ---- */
+  /* mobile menu */
   const burger = $('.burger');
-  const setMenu = open => {
-    html.classList.toggle('menu-open', open);
-    burger.setAttribute('aria-expanded', open);
-    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-    if (window.__lenis) open ? __lenis.stop() : __lenis.start();
-  };
+  const setMenu = open => { html.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); onScroll(scrollY); };
   burger.addEventListener('click', () => setMenu(!html.classList.contains('menu-open')));
-  $$('.mobile-menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  $$('#mnav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => e.key === 'Escape' && setMenu(false));
 
-  /* ---- operation plan geometry (precision-ag illustration) ---- */
-  const plan = $('.plan');
-  const planEls = {};
-  if (plan) {
-    const NS = 'http://www.w3.org/2000/svg';
-    const P = [[88,172],[262,96],[440,124],[528,262],[500,452],[318,528],[140,486],[66,330]];
-    const d = 'M' + P.map(p => p.join(' ')).join('L') + 'Z';
-    $('#field').setAttribute('d', d); $('#fieldshape').setAttribute('d', d);
-    const inside = (x, y) => { let c = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c; } return c; };
-    const xsAt = y => { const r = []; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y)) r.push(xi + (y - yi) * (xj - xi) / (yj - yi)); } return r.sort((a, b) => a - b); };
-    let rd = '', flip = false;
-    for (let y = 126; y <= 500; y += 28) { const r = xsAt(y); if (r.length < 2) continue; let a = r[0] + 14, b = r[r.length - 1] - 14; if (flip) [a, b] = [b, a]; rd += (rd ? 'L' : 'M') + a.toFixed(1) + ' ' + y + 'L' + b.toFixed(1) + ' ' + y; flip = !flip; }
-    $('#route').setAttribute('d', rd);
-    const cells = $('#cells');
-    for (let y = 60; y < 540; y += 30) for (let x = 40; x < 560; x += 30) {
-      if (!inside(x + 15, y + 15) && !inside(x, y) && !inside(x + 30, y + 30)) continue;
-      const v = .5 + .5 * Math.sin(x * .021 + y * .013) * Math.cos(y * .017 - x * .006);
-      const r = document.createElementNS(NS, 'rect');
-      r.setAttribute('x', x + 1); r.setAttribute('y', y + 1); r.setAttribute('width', 28); r.setAttribute('height', 28); r.setAttribute('rx', 3);
-      r.setAttribute('fill', `rgba(78,127,34,${(.08 + .42 * v).toFixed(2)})`);
-      cells.append(r);
-    }
-    const verts = $('#vertices');
-    P.forEach(([x, y]) => { const g = document.createElementNS(NS, 'rect'); g.setAttribute('x', x - 5); g.setAttribute('y', y - 5); g.setAttribute('width', 10); g.setAttribute('height', 10); g.setAttribute('fill', '#fff'); g.setAttribute('stroke', '#2f5216'); g.setAttribute('stroke-width', 2); verts.append(g); });
-    const route = $('#route'), rl = route.getTotalLength(), end = route.getPointAtLength(rl);
-    $('#drone-dot').setAttribute('transform', `translate(${end.x} ${end.y})`);
-    Object.assign(planEls, { field: $('#field'), route, rl, dot: $('#drone-dot'), cells: $$('rect', cells), verts: $$('rect', verts) });
-  }
+  if (reduced || !window.gsap || !window.ScrollTrigger) return;
 
-  /* ---- loader finish ---- */
-  let introStarted = false;
-  const startIntro = cb => {
-    const go = () => { if (introStarted) return; introStarted = true; html.classList.add('loaded'); cb && cb(); };
-    if (reduced) return go();
-    const min = new Promise(r => setTimeout(r, 1500));
-    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-    Promise.all([min, fonts]).then(go);
-    setTimeout(go, 3000);
-  };
-
-  if (!window.gsap || !window.ScrollTrigger || reduced) { startIntro(); return; }
-
-  /* ================= GSAP ================= */
-  html.classList.add('gsap');
+  /* ---------- motion ---------- */
   gsap.registerPlugin(ScrollTrigger);
-  gsap.defaults({ ease: 'expo.out', duration: 1.4 });
-
-  /* smooth scroll */
   if (window.Lenis) {
-    const lenis = new Lenis({ lerp: .09, smoothWheel: true });
-    window.__lenis = lenis;
+    const lenis = new Lenis({ lerp: .11 });
     lenis.on('scroll', e => { ScrollTrigger.update(); onScroll(e.scroll); });
-    gsap.ticker.add(t => lenis.raf(t * 1000));
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
     $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-      const id = a.getAttribute('href'); if (id.length < 2) return;
-      const t = $(id); if (!t) return;
-      e.preventDefault(); setMenu(false);
-      lenis.scrollTo(t, { offset: id === '#inicio' ? 0 : -40, duration: 1.6 });
+      const id = a.getAttribute('href'), t = id.length > 1 && $(id); if (!t) return;
+      e.preventDefault(); setMenu(false); lenis.scrollTo(t, { offset: id === '#inicio' ? 0 : -72, duration: 1.4 });
     }));
   }
 
-  /* hero intro */
-  const heroLines = $$('[data-hero-line]'), heroBits = $$('[data-hero]');
-  gsap.set(heroLines, { yPercent: 115, rotate: 4 });
-  gsap.set(heroBits, { y: 40, opacity: 0 });
-  gsap.set('.drone-wrap', { opacity: 0, scale: .7, y: -80 });
-  gsap.set('[data-hero-bg]', { scale: 1.3 });
-  startIntro(() => {
-    const tl = gsap.timeline({ delay: .35 });
-    tl.to('[data-hero-bg]', { scale: 1.08, duration: 2.6 }, 0)
-      .to(heroLines, { yPercent: 0, rotate: 0, stagger: .1, duration: 1.5 }, .15)
-      .to(heroBits, { y: 0, opacity: 1, stagger: .1, duration: 1.3 }, .55)
-      .to('.drone-wrap', { opacity: 1, scale: 1, y: 0, duration: 2.2 }, .3);
+  /* hero: entrance + depth */
+  gsap.from('.hero-media img', { scale: 1.12, duration: 2.4, ease: 'power3.out' });
+  gsap.from('[data-h]', { y: 30, opacity: 0, duration: 1.1, ease: 'power3.out', stagger: .12, delay: .15 });
+  gsap.to('.hero-media img', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-content', { y: -60, opacity: .4, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  /* content reveals */
+  gsap.set('[data-a],[data-card]', { opacity: 0, y: 36 });
+  ScrollTrigger.batch('[data-a]', { start: 'top 88%', once: true, onEnter: b => gsap.to(b, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', stagger: .1 }) });
+  ScrollTrigger.batch('[data-card]', { start: 'top 90%', once: true, onEnter: b => gsap.to(b, { y: 0, opacity: 1, duration: 1.1, ease: 'power3.out', stagger: .12 }) });
+
+  /* service photos: mask reveal with zoom */
+  $$('.card-media').forEach(m => {
+    const st = { trigger: m, start: 'top 88%', once: true };
+    gsap.fromTo(m, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 1.3, ease: 'power3.inOut', scrollTrigger: st });
+    gsap.fromTo($('img', m), { scale: 1.25 }, { scale: 1, duration: 1.8, ease: 'power3.out', scrollTrigger: { ...st } });
   });
 
-  /* hero scroll parallax */
-  gsap.to('[data-hero-bg]', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.hero-content', { yPercent: -18, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.drone-wrap', { yPercent: -45, rotate: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.drone-body', { y: 10, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  /* process: progress line follows scroll */
+  const vertical = () => innerWidth <= 720;
+  gsap.fromTo('.steps-line i', { scaleX: () => vertical() ? 1 : 0, scaleY: () => vertical() ? 0 : 1 }, { scaleX: 1, scaleY: 1, ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 75%', end: 'bottom 60%', scrub: true, invalidateOnRefresh: true } });
+  gsap.from('[data-step]', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', stagger: .18, scrollTrigger: { trigger: '.steps', start: 'top 80%' } });
 
-  /* drone follows pointer */
-  if (fine) {
-    const dx = gsap.quickTo('.drone', 'x', { duration: 1.6, ease: 'power3' }), dy = gsap.quickTo('.drone', 'y', { duration: 1.6, ease: 'power3' }), dr = gsap.quickTo('.drone', 'rotation', { duration: 1.6, ease: 'power3' });
-    $('.hero').addEventListener('pointermove', e => { const nx = e.clientX / innerWidth - .5, ny = e.clientY / innerHeight - .5; dx(nx * 50); dy(ny * 36); dr(nx * 8); });
-  }
-
-  /* line reveals */
-  $$('[data-line]').forEach(el => {
-    gsap.from(el, { yPercent: 115, rotate: 3, duration: 1.4, scrollTrigger: { trigger: el.closest('.line'), start: 'top 88%' } });
-  });
-  /* simple reveals */
-  $$('[data-reveal]').forEach(el => {
-    gsap.from(el, { y: 50, opacity: 0, duration: 1.4, scrollTrigger: { trigger: el, start: 'top 88%' } });
-  });
-  /* staggered groups */
-  const groups = new Map();
-  $$('[data-stagger]').forEach(el => { const p = el.parentElement; groups.has(p) || groups.set(p, []); groups.get(p).push(el); });
-  groups.forEach((els, p) => gsap.from(els, { y: 60, opacity: 0, stagger: .12, duration: 1.3, scrollTrigger: { trigger: p, start: 'top 85%' } }));
-  /* eyebrows */
-  $$('.eyebrow:not([data-hero])').forEach(el => gsap.from(el, { x: -20, opacity: 0, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } }));
-
-  /* parallax [data-speed] */
-  $$('[data-speed]').forEach(el => gsap.to(el, { yPercent: +el.dataset.speed * 100, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
-
-  /* manifesto words */
-  const mt = $('[data-words]');
-  if (mt) {
-    const words = mt.textContent.trim().split(/\s+/);
-    mt.innerHTML = words.map(w => `<span class="w">${w}</span>`).join(' ');
-    const accent = ['caro.', 'drones', 'quem', 'produz.'];
-    $$('.w', mt).forEach(w => { if (accent.includes(w.textContent)) w.style.fontFamily = 'var(--serif)', w.style.fontStyle = 'italic', w.style.fontWeight = 400; });
-    gsap.fromTo($$('.w', mt), { color: 'rgba(238,242,234,.14)' }, { color: '#eef2ea', stagger: .1, ease: 'none', scrollTrigger: { trigger: mt, start: 'top 80%', end: 'bottom 45%', scrub: true } });
-  }
-
-  /* marquee — direction & speed follow scroll */
-  const track = $('.marquee-track');
-  if (track) {
-    const loop = gsap.to(track, { xPercent: -50, duration: 38, ease: 'none', repeat: -1 });
-    let dir = 1;
-    ScrollTrigger.create({
-      trigger: '.marquee', start: 'top bottom', end: 'bottom top',
-      onUpdate: self => {
-        const v = self.getVelocity();
-        if (self.direction !== dir) dir = self.direction;
-        gsap.to(loop, { timeScale: dir * Math.min(6, 1 + Math.abs(v) / 400), duration: .25, overwrite: true, onComplete: () => gsap.to(loop, { timeScale: dir, duration: 1.2 }) });
-      }
-    });
-  }
-
-  /* technology: cinematic zoom */
-  const zm = $('.zoom-media');
-  if (zm) {
-    const insetFrom = () => innerWidth < 760 ? 'inset(44% 5% 10% 5% round 22px)' : 'inset(40% 25% 9% 25% round 28px)';
-    gsap.timeline({ scrollTrigger: { trigger: '.zoom', start: 'top top', end: 'bottom bottom', scrub: 1, invalidateOnRefresh: true } })
-      .fromTo(zm, { clipPath: insetFrom }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'power2.inOut', duration: 1 }, 0)
-      .fromTo($('img', zm), { scale: 1.5 }, { scale: 1.04, ease: 'power2.inOut', duration: 1 }, 0)
-      .to('.zoom-head', { y: -140, opacity: 0, ease: 'power1.in', duration: .45 }, .12)
-      .fromTo('.zoom-cap > *', { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: .08, duration: .3, ease: 'power2.out' }, .78);
-  }
-
-  /* technology: storytelling plan */
-  if (planEls.field) {
-    const { field, route, rl, dot, cells, verts } = planEls;
-    const fl = field.getTotalLength();
-    gsap.set(field, { strokeDasharray: fl, strokeDashoffset: fl, fillOpacity: 0 });
-    gsap.set(route, { strokeDasharray: rl, strokeDashoffset: rl });
-    gsap.set(cells, { opacity: 0 }); gsap.set(verts, { scale: 0, transformOrigin: '50% 50%' }); gsap.set(dot, { opacity: 0 });
-    const prog = { r: 0 };
-    const moveDot = () => { const L = rl * prog.r; route.style.strokeDashoffset = rl - L; const pt = route.getPointAtLength(L); dot.setAttribute('transform', `translate(${pt.x} ${pt.y})`); };
-    moveDot();
-    gsap.timeline({ scrollTrigger: { trigger: '.story-steps', start: 'top 65%', end: 'bottom 75%', scrub: 1 } })
-      .to(field, { strokeDashoffset: 0, duration: 1, ease: 'none' })
-      .to(verts, { scale: 1, stagger: .05, duration: .3, ease: 'back.out(3)' }, .5)
-      .to(field, { fillOpacity: 1, duration: .3, ease: 'none' }, .9)
-      .to(dot, { opacity: 1, duration: .1 }, 1.15)
-      .to(prog, { r: 1, duration: 1.4, ease: 'none', onUpdate: moveDot }, 1.2)
-      .to(dot, { opacity: 0, duration: .15 }, 2.65)
-      .to(cells, { opacity: 1, stagger: { each: .003, from: 'random' }, duration: .2, ease: 'none' }, 2.7);
-    const steps = $$('.step'), status = $('[data-status]'), legs = $$('[data-leg]');
-    const labels = ['01 · LIMITES DA ÁREA', '02 · ROTA DE VOO', '03 · LEITURA DO TERRENO'];
-    const activate = i => { steps.forEach((s, k) => s.classList.toggle('is-active', k === i)); status.textContent = labels[i]; legs.forEach((l, k) => l.classList.toggle('on', k <= i)); };
-    activate(0);
-    steps.forEach((s, i) => ScrollTrigger.create({ trigger: s, start: 'top 60%', end: 'bottom 60%', onToggle: self => self.isActive && activate(i) }));
-  }
-
-  /* service cards: soft light that follows the pointer */
-  if (fine) $$('.svc').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', e.clientX - r.left + 'px'); c.style.setProperty('--my', e.clientY - r.top + 'px'); }));
-
-  /* services horizontal scroll (desktop) */
-  const mm = gsap.matchMedia();
-  mm.add('(min-width: 1101px)', () => {
-    const pin = $('.svc-pin'), trk = $('.svc-track'), bar = $('.svc-progress i'), cur = $('.svc-progress .cur');
-    pin.style.height = '100vh';
-    trk.style.height = '100%'; trk.style.alignItems = 'center';
-    $('.services').style.padding = '0';
-    const dist = () => trk.scrollWidth - innerWidth;
-    const tween = gsap.to(trk, {
-      x: () => -dist(), ease: 'none',
-      scrollTrigger: {
-        trigger: pin, pin: true, scrub: 1, start: 'top top', end: () => '+=' + dist(), invalidateOnRefresh: true, anticipatePin: 1,
-        onUpdate: s => { bar.style.transform = `scaleX(${s.progress})`; cur.textContent = '0' + Math.min(3, 1 + Math.floor(s.progress * 3.001)); }
-      }
-    });
-    $$('.svc').forEach(card => {
-      const img = $('img', card);
-      gsap.fromTo(img, { scale: 1.35, xPercent: 8 }, { scale: 1.05, xPercent: -6, ease: 'none', scrollTrigger: { containerAnimation: tween, trigger: card, start: 'left right', end: 'right left', scrub: true } });
-      gsap.from($$('.svc-body > *', card), { x: 80, opacity: 0, stagger: .08, duration: 1.2, scrollTrigger: { containerAnimation: tween, trigger: card, start: 'left 75%' } });
-      gsap.from($('.svc-num', card), { yPercent: 60, opacity: 0, duration: 1.4, scrollTrigger: { containerAnimation: tween, trigger: card, start: 'left 70%' } });
-    });
-    return () => { pin.style.height = ''; trk.style.height = ''; trk.style.alignItems = ''; $('.services').style.padding = ''; };
-  });
-  mm.add('(max-width: 1100px)', () => {
-    $$('.svc').forEach(card => {
-      gsap.from(card, { y: 80, opacity: 0, duration: 1.3, scrollTrigger: { trigger: card, start: 'top 88%' } });
-      gsap.fromTo($('img', card), { scale: 1.3 }, { scale: 1.02, ease: 'none', scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true } });
-    });
-  });
-
-  /* map reveal */
-  gsap.from('.map-shell', { clipPath: 'inset(12% 12% 12% 12% round 26px)', duration: 1.8, ease: 'expo.inOut', scrollTrigger: { trigger: '.map-shell', start: 'top 80%' } });
-  gsap.from('.state', { x: -40, opacity: 0, stagger: .12, duration: 1.2, scrollTrigger: { trigger: '.states', start: 'top 90%' } });
-
-  /* enterprise panel slides up over previous section */
-  gsap.from('.enterprise', { borderRadius: '0px', ease: 'none', scrollTrigger: { trigger: '.enterprise', start: 'top bottom', end: 'top 40%', scrub: true } });
-
-  /* project card scale-in + phone tilt */
-  gsap.fromTo('.proj', { scale: .92 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.proj', start: 'top bottom', end: 'top 30%', scrub: true } });
-  gsap.from('#phone', { y: 160, rotateX: 25, rotateZ: -6, opacity: 0, duration: 1.8, scrollTrigger: { trigger: '.proj', start: 'top 70%' } });
-  if (fine) {
-    const vis = $('.proj-visual'), rx = gsap.quickTo('#phone', 'rotateX', { duration: .9, ease: 'power3' }), ry = gsap.quickTo('#phone', 'rotateY', { duration: .9, ease: 'power3' });
-    vis.addEventListener('pointermove', e => { const r = vis.getBoundingClientRect(); ry(((e.clientX - r.left) / r.width - .5) * 22); rx(-((e.clientY - r.top) / r.height - .5) * 18); });
-    vis.addEventListener('pointerleave', () => { rx(0); ry(0); });
-  }
-
-  /* CTA heading scale */
-  gsap.fromTo('.cta h2', { scale: .9 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.cta', start: 'top bottom', end: 'center center', scrub: true } });
-
-  /* giant footer word */
-  gsap.from('[data-giant]', { yPercent: 50, opacity: 0, duration: 1.8, scrollTrigger: { trigger: '[data-giant]', start: 'top 98%' } });
-
-  /* magnetic buttons */
-  if (fine) {
-    $$('.magnetic').forEach(el => {
-      const xT = gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' }), yT = gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' });
-      el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); xT((e.clientX - r.left - r.width / 2) * .25); yT((e.clientY - r.top - r.height / 2) * .35); });
-      el.addEventListener('pointerleave', () => { xT(0); yT(0); });
-    });
-
-    /* cursor */
-    const c = $('.cursor'), d = $('.cursor-dot');
-    const cx = gsap.quickTo(c, 'x', { duration: .5, ease: 'power3' }), cy = gsap.quickTo(c, 'y', { duration: .5, ease: 'power3' });
-    const ddx = gsap.quickTo(d, 'x', { duration: .08 }), ddy = gsap.quickTo(d, 'y', { duration: .08 });
-    addEventListener('pointermove', e => { c.classList.add('on'); d.classList.add('on'); cx(e.clientX); cy(e.clientY); ddx(e.clientX); ddy(e.clientY); }, { passive: true });
-    document.addEventListener('pointerleave', () => { c.classList.remove('on'); d.classList.remove('on'); });
-    document.addEventListener('pointerover', e => c.classList.toggle('hover', !!e.target.closest('a,button,select,input,textarea,.ent,.state')));
-  }
-
-  /* spray particles beneath the drone */
-  const cv = $('#spray'), ctx = cv.getContext('2d');
-  let W, H, dpr, parts = [], heroVisible = true;
-  const resize = () => { dpr = Math.min(2, devicePixelRatio || 1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
-  resize(); addEventListener('resize', resize);
-  new IntersectionObserver(([e]) => heroVisible = e.isIntersecting).observe($('.hero'));
-  const nozzles = [[110, 290], [290, 290], [110, 110], [290, 110]];
-  const tick = () => {
-    if (heroVisible && W) {
-      const svg = $('.drone'), r = svg.getBoundingClientRect(), hr = cv.getBoundingClientRect(), k = r.width / 400;
-      if (parts.length < 220) for (let i = 0; i < 3; i++) {
-        const n = nozzles[(Math.random() * 2) | 0];
-        parts.push({ x: r.left - hr.left + n[0] * k + (Math.random() - .5) * 30 * k, y: r.top - hr.top + n[1] * k + 20 * k, vx: (Math.random() - .5) * .9, vy: .8 + Math.random() * 1.6, life: 0, max: 120 + Math.random() * 120, s: .6 + Math.random() * 1.6 });
-      }
-      ctx.clearRect(0, 0, W, H);
-      for (let i = parts.length - 1; i >= 0; i--) {
-        const p = parts[i]; p.life++; p.x += p.vx; p.y += p.vy; p.vx *= 1.004; p.vy *= .995;
-        const a = Math.sin(Math.PI * p.life / p.max) * .55;
-        ctx.fillStyle = `rgba(182,240,122,${a})`; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, 6.283); ctx.fill();
-        if (p.life > p.max || p.y > H) parts.splice(i, 1);
-      }
-    }
-    requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
+  /* phone + CTA depth */
+  gsap.fromTo('#phone', { y: 60, rotate: -3 }, { y: -30, rotate: 0, ease: 'none', scrollTrigger: { trigger: '.agro', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.fromTo('.cta-bg', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.cta', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   addEventListener('load', () => ScrollTrigger.refresh());
 })();
 </script>
 
-<script>(()=>{const initMap=async()=>{const host=document.getElementById('agro-map');if(!host||!window.maplibregl)return;try{const res=await fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson');if(!res.ok)throw Error('cartografia');const geo=await res.json();const normalize=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();const selected=geo.features.filter(f=>['para','tocantins','maranhao'].includes(normalize(f.properties.name||f.properties.nome)));if(selected.length!==3)throw Error('contornos');const fc={type:'FeatureCollection',features:selected.map(f=>({...f,properties:{...f.properties,state:normalize(f.properties.name||f.properties.nome)}}))};const map=new maplibregl.Map({container:'agro-map',style:{version:8,sources:{states:{type:'geojson',data:fc}},layers:[{id:'background',type:'background',paint:{'background-color':'rgba(0,0,0,0)'}},{id:'underlay',type:'fill',source:'states',paint:{'fill-color':'#223e22','fill-opacity':.25}},{id:'extrusion',type:'fill-extrusion',source:'states',paint:{'fill-extrusion-color':['match',['get','state'],'para','#3f7a2a','tocantins','#9be15d','maranhao','#5fa73a','#70b13c'],'fill-extrusion-height':50000,'fill-extrusion-base':0,'fill-extrusion-opacity':.92}},{id:'border',type:'line',source:'states',paint:{'line-color':'#d8fbb8','line-width':1.4,'line-opacity':.9}}]},center:[-49.2,-6.0],zoom:3.3,pitch:45,bearing:-12,interactive:false,attributionControl:false,antialias:true});const fit=()=>map.fitBounds([[-59.3,-14],[-41.1,2]],{padding:{top:90,bottom:90,left:28,right:28},duration:0,maxZoom:4.4,bearing:-12,pitch:45});map.on('load',()=>{host.querySelector('.map-fallback')?.remove();fit();[['PARÁ',[-52.9,-4.6]],['TOCANTINS',[-48.5,-10.1]],['MARANHÃO',[-44.9,-5.5]]].forEach(([name,coords])=>{const el=document.createElement('div');el.className='state-marker';const t=document.createElement('span');t.textContent=name;el.append(t);new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(coords).addTo(map)});if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let b=-12,dir=1;const sway=()=>{b+=.02*dir;if(b>-4||b<-20)dir*=-1;map.setBearing(b)};let on=false,raf=0;const loop=()=>{sway();raf=on?requestAnimationFrame(loop):0};const io=new IntersectionObserver(([e])=>{on=e.isIntersecting;if(on&&!raf)raf=requestAnimationFrame(loop)});io.observe(host)}});addEventListener('resize',()=>{map.resize();fit()})}catch(e){const fb=host.querySelector('.map-fallback');if(fb)fb.textContent='PARÁ · TOCANTINS · MARANHÃO — ÁREA DE ATUAÇÃO'}};const host=document.getElementById('agro-map');if(!host)return;let started=false;const load=()=>{if(started)return;started=true;const sc=document.createElement('script');sc.src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';sc.integrity='sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj';sc.crossOrigin='anonymous';sc.onload=initMap;sc.onerror=()=>{const fb=host.querySelector('.map-fallback');if(fb)fb.textContent='PARÁ · TOCANTINS · MARANHÃO — ÁREA DE ATUAÇÃO'};document.head.append(sc)};if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();load()}},{rootMargin:'900px 0px'});io.observe(host)}else load()})();</script>
+<script>
+/* ---------- Área de atuação: mapa 3D (MapLibre, carregado sob demanda) ---------- */
+(() => {
+  const host = document.getElementById('map'), fb = document.getElementById('map-fallback');
+  if (!host) return;
+  const FOCUS = { PA: [-52.4, -4.2], TO: [-48.3, -10.3], MA: [-45.2, -5.0] };
+  const NAMES = { PA: 'Pará', TO: 'Tocantins', MA: 'Maranhão' };
+  const COLORS = { PA: '#5c9e2f', TO: '#8fcb4c', MA: '#73b23a' };
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const btns = [...document.querySelectorAll('.state-btn')];
+  const markers = {};
+  let mapApi = null;
+
+  /* static SVG map: shown while loading and when WebGL is unavailable */
+  const drawSvg = geo => {
+    const W = 600, H = 600, b = [-74.2, -34, -34.6, 5.4];
+    const k = Math.min(W / (b[2] - b[0]), H / (b[3] - b[1])) * .94;
+    const ox = (W - (b[2] - b[0]) * k) / 2, oy = (H - (b[3] - b[1]) * k) / 2;
+    const pt = ([x, y]) => (ox + (x - b[0]) * k).toFixed(1) + ' ' + (oy + (b[3] - y) * k).toFixed(1);
+    const path = g => g.coordinates.map(p => p.map(r => 'M' + r.map(pt).join('L') + 'Z').join('')).join('');
+    const out = geo.features.map(f => { const uf = f.properties.uf, on = uf in FOCUS; return `<path data-uf="${uf}" d="${path(f.geometry)}" fill="${on ? COLORS[uf] : '#1f3a25'}" stroke="${on ? '#e9f6da' : '#33553a'}" stroke-width="${on ? 1.2 : .6}"/>`; }).join('');
+    fb.innerHTML = `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${out}</svg>`;
+  };
+
+  const highlight = uf => {
+    btns.forEach(b => b.classList.toggle('on', b.dataset.uf === uf));
+    Object.entries(markers).forEach(([k, m]) => m.classList.toggle('on', k === uf));
+    fb.querySelectorAll('path[data-uf]').forEach(p => { p.style.opacity = !uf || !(p.dataset.uf in FOCUS) || p.dataset.uf === uf ? 1 : .5; });
+    if (mapApi) mapApi(uf);
+  };
+  btns.forEach(b => {
+    b.addEventListener('mouseenter', () => highlight(b.dataset.uf));
+    b.addEventListener('focus', () => highlight(b.dataset.uf));
+    b.addEventListener('click', () => highlight(b.classList.contains('on') ? null : b.dataset.uf));
+  });
+  document.querySelector('.state-list').addEventListener('mouseleave', () => highlight(null));
+
+  const hasWebGL = () => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; } };
+
+  const initMap = async geo => {
+    geo.features.forEach((f, i) => { f.id = i; f.properties.focus = f.properties.uf in FOCUS ? 1 : 0; });
+    const idOf = {}; geo.features.forEach(f => { if (f.properties.focus) idOf[f.properties.uf] = f.id; });
+    const map = new maplibregl.Map({
+      container: host, interactive: false, attributionControl: false, antialias: true, fadeDuration: 0,
+      bounds: [[-74.5, -33.8], [-34.5, 5.3]], fitBoundsOptions: { padding: 50 },
+      style: {
+        version: 8,
+        light: { anchor: 'viewport', color: '#ffffff', intensity: .38, position: [1.2, 210, 35] },
+        sources: { br: { type: 'geojson', data: geo } },
+        layers: [
+          { id: 'bg', type: 'background', paint: { 'background-color': 'rgba(0,0,0,0)' } },
+          { id: 'others', type: 'fill', source: 'br', filter: ['==', ['get', 'focus'], 0], paint: { 'fill-color': '#1d3823', 'fill-opacity': .95 } },
+          { id: 'others-line', type: 'line', source: 'br', filter: ['==', ['get', 'focus'], 0], paint: { 'line-color': '#335a3a', 'line-width': .7 } },
+          { id: 'focus-glow', type: 'line', source: 'br', filter: ['==', ['get', 'focus'], 1], paint: { 'line-color': '#85c440', 'line-width': 10, 'line-blur': 10, 'line-opacity': .35 } },
+          { id: 'focus-3d', type: 'fill-extrusion', source: 'br', filter: ['==', ['get', 'focus'], 1], paint: {
+            'fill-extrusion-color': ['case', ['boolean', ['feature-state', 'on'], false], '#b4e27c', ['match', ['get', 'uf'], 'PA', COLORS.PA, 'TO', COLORS.TO, 'MA', COLORS.MA, '#85c440']],
+            'fill-extrusion-height': ['case', ['boolean', ['feature-state', 'on'], false], 90000, ['boolean', ['feature-state', 'dim'], false], 25000, 55000],
+            'fill-extrusion-base': 0, 'fill-extrusion-opacity': .96, 'fill-extrusion-vertical-gradient': true } },
+          { id: 'focus-top', type: 'line', source: 'br', filter: ['==', ['get', 'focus'], 1], paint: { 'line-color': '#eaf7dc', 'line-width': 1.1, 'line-opacity': .85 } }
+        ]
+      }
+    });
+    await new Promise(r => map.once('load', r));
+    fb.style.transition = 'opacity .8s'; fb.style.opacity = 0; setTimeout(() => fb.remove(), 900);
+
+    Object.entries(FOCUS).forEach(([uf, ll]) => {
+      const el = document.createElement('div'); el.className = 'mk';
+      el.innerHTML = `<div class="mk-label"><b>${uf}</b>${NAMES[uf]}</div><div class="mk-dot"></div>`;
+      new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, -4] }).setLngLat(ll).addTo(map);
+      markers[uf] = el;
+    });
+
+    mapApi = uf => Object.entries(idOf).forEach(([k, id]) => map.setFeatureState({ source: 'br', id }, { on: k === uf, dim: !!uf && k !== uf }));
+
+    const pad = () => innerWidth < 720 ? { top: 56, bottom: 50, left: 16, right: 16 } : { top: 60, bottom: 70, left: 40, right: 40 };
+    const focusView = dur => map.fitBounds([[-59.2, -13.6], [-41.6, 2.8]], { padding: pad(), pitch: 42, bearing: -10, duration: dur, essential: true });
+    const showMarkers = () => Object.values(markers).forEach((m, i) => setTimeout(() => m.classList.add('show'), i * 140));
+    if (reduced) { focusView(0); showMarkers(); }
+    else {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); setTimeout(() => { focusView(3200); map.once('moveend', showMarkers); }, 250); } }, { threshold: .45 });
+      io.observe(host);
+    }
+    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (map.getPitch() > 1) focusView(0); }, 200); });
+  };
+
+  const loadCss = () => new Promise(r => { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; l.integrity = 'sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V'; l.crossOrigin = 'anonymous'; l.onload = l.onerror = r; document.head.append(l); });
+  const loadJs = () => new Promise((res, rej) => { const s = document.createElement('script'); s.src = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js'; s.integrity = 'sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj'; s.crossOrigin = 'anonymous'; s.onload = res; s.onerror = rej; document.head.append(s); });
+
+  const start = async () => {
+    try {
+      const r = await fetch('/brasil-estados.geojson'); if (!r.ok) throw Error('geo');
+      const geo = await r.json();
+      drawSvg(geo);
+      if (!hasWebGL()) return;
+      await Promise.all([loadCss(), loadJs()]);
+      await initMap(geo);
+    } catch (e) { if (!fb.innerHTML) fb.textContent = 'Pará · Tocantins · Maranhão'; }
+  };
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '800px 0px' });
+  io.observe(host);
+})();
+</script>
 </body>
 </html>
